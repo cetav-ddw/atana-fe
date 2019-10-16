@@ -1,60 +1,65 @@
-@import'./reset.scss';
-@import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
-@import'./variables.scss';
+@import "./reset.scss";
+@import url("https://fonts.googleapis.com/css?family=Poppins&display=swap");
+@import "./variables.scss";
 
+.section__wrapper {
+  margin: 0 auto;
+  max-width: $layoutSize;
+  padding: 0 30px;
+}
 
 body {
-    font-family: 'poppins', Arial, Helvetica, sans-serif;
-    letter-spacing: 0.15em;
+  font-family: "poppins", Arial, Helvetica, sans-serif;
+  letter-spacing: 0.15em;
 }
 
 h1 {
-    color: $white;
-    font-weight: bold;
-    font-size: 30px;
+  color: $white;
+  font-weight: bold;
+  font-size: 30px;
 
-    @media (min-width: $medium) {
-        font-size: 35px;
-    }
+  @media (min-width: $medium) {
+    font-size: 35px;
+  }
 
-    @media (min-width: $large) {
-        font-size: 45px;
-    }
+  @media (min-width: $large) {
+    font-size: 45px;
+  }
 }
 
 h2 {
-    color: $purple;
-    font-weight: bold;
-    font-size: 25px;
+  color: $purple;
+  font-weight: bold;
+  font-size: 25px;
 
-    @media (min-width: $large) {
-        font-size: 40px;
-    }
+  @media (min-width: $large) {
+    font-size: 40px;
+  }
 }
 
 h3 {
-    color: $pink;
-    font-weight: bold;
-    font-size: 17px;
+  color: $pink;
+  font-weight: bold;
+  font-size: 17px;
 
-    @media (min-width: $medium) {
-        font-size: 20px;
-    }
+  @media (min-width: $medium) {
+    font-size: 20px;
+  }
 
-    @media (min-width: $large) {
-        font-size: 30px;
-    }
+  @media (min-width: $large) {
+    font-size: 30px;
+  }
 }
 
 h4 {
-    color: $black;
-    font-size: 15px;
+  color: $black;
+  font-size: 15px;
 
-    @media (min-width: $medium) {
-        font-size: 18px;
-    }
+  @media (min-width: $medium) {
+    font-size: 18px;
+  }
 
-    @media (min-width: $large) {
-        font-size: 25px;
-    }
+  @media (min-width: $large) {
+    font-size: 25px;
+  }
 }

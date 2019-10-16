@@ -1,12 +1,12 @@
 @keyframes wave {
-    50% {
-        transform: translateY(-25px);
-    }
+  50% {
+    transform: translateY(-25px);
+  }
 }
 
 @keyframes waveBlur {
-    50% {
-        filter: blur(7.5px);
-        transform: rotateX(180deg) scale(0.8);
-    }
+  50% {
+    filter: blur(7.5px);
+    transform: rotateX(180deg) scale(0.8);
+  }
 }

@@ -1,199 +1,203 @@
-@import '../../styles/variables.scss';
-@import '../../styles/animations.scss';
+@import "../../styles/variables.scss";
+@import "../../styles/animations.scss";
 
 $paper-plane-top: 330px;
 
 .check {
-    background-image: url('../../images/svg/check.svg');
-    height: 0;
-    width: 0;
+  background-image: url("../../images/svg/check.svg");
+  height: 0;
+  width: 0;
 
-    &:nth-child(1) {
-        left: 0%;
-        padding: 30px;
-        top: 50px;
-        transform: rotate(-20deg);
-    }
+  &:nth-child(1) {
+    left: 0%;
+    padding: 30px;
+    top: 50px;
+    transform: rotate(-20deg);
+  }
 
-    &:nth-child(2) {
-        padding: 37.5px;
-        right: 0%;
-        top: 75px;
-        transform: rotate(18deg);
-    }
+  &:nth-child(2) {
+    padding: 37.5px;
+    right: 0%;
+    top: 75px;
+    transform: rotate(18deg);
+  }
 
-    &:nth-child(3) {
-        left: 15%;
-        padding: 35px;
-        top: 150px;
-        transform: rotate(-17deg);
-    }
+  &:nth-child(3) {
+    left: 15%;
+    padding: 35px;
+    top: 150px;
+    transform: rotate(-17deg);
+  }
 
-    &:nth-child(4) {
-        padding: 32.5px;
-        right: 20%;
-        top: 150px;
-        transform: rotate(15deg);
-    }
+  &:nth-child(4) {
+    padding: 32.5px;
+    right: 20%;
+    top: 150px;
+    transform: rotate(15deg);
+  }
 
-    &:nth-child(5) {
-        left: 32.5%;
-        padding: 30px;
-        top: 75px;
-        transform: rotate(-21deg);
-    }
+  &:nth-child(5) {
+    left: 32.5%;
+    padding: 30px;
+    top: 75px;
+    transform: rotate(-21deg);
+  }
 
-    &:nth-child(6) {
-        padding: 27.5px;
-        right: 32.5%;
-        top: 25px;
-        transform: rotate(25deg);
-    }
+  &:nth-child(6) {
+    padding: 27.5px;
+    right: 32.5%;
+    top: 25px;
+    transform: rotate(25deg);
+  }
 }
 
 .light-bulb {
-    background-image: url('../../images/svg/lightbulb.svg');
+  background-image: url("../../images/svg/lightbulb.svg");
 
-    &:nth-child(1) {
-        height: 135px;
-        width: 135px;
-    }
+  &:nth-child(1) {
+    height: 135px;
+    width: 135px;
+  }
 
-    &:nth-child(2) {
-        height: 87px;
-        left: 135px;
-        top: 100px;
-        transform: rotate(40deg);
-        width: 87px;
-    }
+  &:nth-child(2) {
+    height: 87px;
+    left: 135px;
+    top: 100px;
+    transform: rotate(40deg);
+    width: 87px;
+  }
 }
 
 .our-mission {
-    background: linear-gradient(to top, $black, $purple);
-    overflow-x: hidden;
-    position: relative;
+  background: linear-gradient(to top, $black, $purple);
+  overflow-x: hidden;
+  position: relative;
 }
 
 .our-mission__canvas {
-    left: 0;
-    position: absolute;
-    top: 0;
+  left: 0;
+  position: absolute;
+  top: 0;
 }
 
 .our-mission__logo {
-    background-image: url('../../images/svg/logo.svg');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: contain;
-    height: 500px;
-    margin-top: -200px;
-    margin-bottom: -70vw;
-    width: 100%;
-    @media (min-width: 515px) { // this needs to be really specific 
-        margin-bottom: -45vw;
-    }
-    @media (min-width: 625px) { // this needs to be really specific 
-        margin-bottom: -30vw;
-    }
-    @media (min-width: 835px) { // this needs to be really specific 
-        margin-bottom: -227px;
-    }
+  background-image: url("../../images/svg/logo.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 500px;
+  margin-top: -200px;
+  margin-bottom: -70vw;
+  width: 100%;
+  @media (min-width: 515px) {
+    // this needs to be really specific
+    margin-bottom: -45vw;
+  }
+  @media (min-width: 625px) {
+    // this needs to be really specific
+    margin-bottom: -30vw;
+  }
+  @media (min-width: 835px) {
+    // this needs to be really specific
+    margin-bottom: -227px;
+  }
 }
 
 .our-mission__paragraph {
-    font-size: 32px;
-    margin-bottom: 80px;
+  font-size: 32px;
+  margin-bottom: 80px;
 }
 
 .our-mission__svg-group {
-    padding-bottom: 300px;
-    position: relative;
+  padding-bottom: 300px;
+  position: relative;
 }
 
 .our-mission__title {
-    font-size: 40px;
-    letter-spacing: 0.15em;
-    padding: 190px 0 80px;
-    text-transform: uppercase;
+  font-size: 40px;
+  letter-spacing: 0.15em;
+  padding: 190px 0 80px;
+  text-transform: uppercase;
 }
 
-.our-mission__title, .our-mission__paragraph {
-    color: $white;
-    text-align: center;
+.our-mission__title,
+.our-mission__paragraph {
+  color: $white;
+  text-align: center;
 }
 
 .our-mission__svg {
-    background-repeat: no-repeat;
-    background-size: contain;
-    position: absolute;
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: absolute;
 }
 
 .paper-plane {
-    background-image: url('../../images/svg/paperplane.svg');
-    height: 30px;
-    left: 30%;
-    top: 50px;
-    width: 81px;
+  background-image: url("../../images/svg/paperplane.svg");
+  height: 30px;
+  left: 30%;
+  top: 50px;
+  width: 81px;
 }
 
 .planet {
-    background-image: url('../../images/svg/planet.svg');
-    height: 30vw;
-    max-height: 295px;
-    max-width: 295px;
-    right: 0;
-    width: 30vw;
+  background-image: url("../../images/svg/planet.svg");
+  height: 30vw;
+  max-height: 295px;
+  max-width: 295px;
+  right: 0;
+  width: 30vw;
 }
 
 .svg-group--spacing {
-    margin-bottom: 100px;
+  margin-bottom: 100px;
 }
 
 .cta {
-    position: relative;
-    width: 100%;
-    height: 400px;
-    padding-top: 150px;
-    display: grid;
-    place-content: center;
-    background: #fff2;
+  position: relative;
+  width: 100%;
+  height: 400px;
+  padding-top: 150px;
+  display: grid;
+  place-content: center;
+  background: #fff2;
 }
 
 .cta__paper-plane {
-    background-image: url('../../images/svg/paperplane.svg');
-    height: 30px;
-    left: calc(20% - 81px);
-    top: $paper-plane-top;
-    width: 81px;
-    animation: wave 4s ease-in-out infinite;
+  background-image: url("../../images/svg/paperplane.svg");
+  height: 30px;
+  left: calc(20% - 81px);
+  top: $paper-plane-top;
+  width: 81px;
+  animation: wave 4s ease-in-out infinite;
 }
 
 .cta__paper-plane--dark {
-    content: '';
-    position: absolute;
-    display: block;
-    background-image: url('../../images/svg/dark-paperplane.svg');
-    background-repeat: no-repeat;
-    background-size: contain;
-    height: 40px;
-    left: calc(20% - 81px);
-    top: $paper-plane-top + 50px;
-    width: 81px;
-    transform: rotateX(180deg);
-    opacity: 0.45;
-    filter: blur(3.5px);
-    animation: waveBlur 4s ease-in-out infinite;
+  content: "";
+  position: absolute;
+  display: block;
+  background-image: url("../../images/svg/dark-paperplane.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 40px;
+  left: calc(20% - 81px);
+  top: $paper-plane-top + 50px;
+  width: 81px;
+  transform: rotateX(180deg);
+  opacity: 0.45;
+  filter: blur(3.5px);
+  animation: waveBlur 4s ease-in-out infinite;
 }
 
 .cta__btn {
-    background: $white;
-    color: $purple;
-    border: 0;
-    padding: 25px 10vw;
-    text-transform: uppercase;
-    font-weight: bold;
-    font-size: 20px;
-    letter-spacing: 2px;
-    border-radius: 5px;
-    box-shadow: 0 40px 30px #0004;
+  background: $white;
+  color: $purple;
+  border: 0;
+  padding: 25px 10vw;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 20px;
+  letter-spacing: 2px;
+  border-radius: 5px;
+  box-shadow: 0 40px 30px #0004;
 }
