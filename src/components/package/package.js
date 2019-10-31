@@ -15,11 +15,7 @@ const Package = ({ data }) => {
     const featureItem = processFeature.map((feature, id) => {
       return <li key={`${data.bundle}-${id}`}>{feature}</li>
     })
-    return (
-      <ul className="package__features">
-        {featureItem}
-      </ul>
-    )
+    return <ul className="package__features">{featureItem}</ul>
   }
 
   return (
@@ -28,7 +24,9 @@ const Package = ({ data }) => {
         <p className="package__type">{data.title}</p>
       </div>
       <p className="package__price">{data.price}</p>
-      <div className={`package__body ${toggleState ? "package__body--open" : ""}`}>
+      <div
+        className={`package__body ${toggleState ? "package__body--open" : ""}`}
+      >
         {bundleFeatures(data.features)}
         <Link to="" className="btn btn--secondary package__btn">
           Obtener {data.title}
@@ -36,7 +34,8 @@ const Package = ({ data }) => {
       </div>
       <button
         className="btn--seemore package__btn--seemore"
-        onClick={() => toggleHandler()}>
+        onClick={() => toggleHandler()}
+      >
         {`${toggleState ? "Ver menos" : "Ver más"}`}
       </button>
     </div>

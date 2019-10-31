@@ -8,7 +8,7 @@ const Menu = () => (
       <Link to="" className="nav__link">
         iniciar sesión
       </Link>
-      <Link to="" className="nav__btn btn btn--primary">
+      <Link to="/register" className="nav__btn btn btn--primary">
         Suscribirse
       </Link>
     </div>

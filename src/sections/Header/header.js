@@ -6,24 +6,24 @@ import { Link } from "gatsby"
 import "./header.scss"
 
 const Header = () => {
-  const HeaderAnimation = header();
+  const HeaderAnimation = header()
   return (
     <div className="header">
       <div className="section__wrapper">
-        <Link to="">
+        <Link to="/register">
           <img src="atana-logo.svg" alt="átana" className="header__logo" />
         </Link>
         <Menu />
         <h1 className="header__title">
           <span className="header__title-span">crea y distribuye</span>{" "}
           comunicados de prensa
-          </h1>
+        </h1>
         <p className="header__text">
           De una manera más fácil, rápida y sencilla.{" "}
         </p>
-        <Link to="" className="header__btn btn btn--primary">
+        <Link to="/register" className="header__btn btn btn--primary">
           Suscribirse
-          </Link>
+        </Link>
         <div className="header__animation">
           <HeaderAnimation />
         </div>

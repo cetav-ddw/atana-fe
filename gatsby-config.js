@@ -28,5 +28,11 @@ module.exports = {
         icon: `src/images/atana-logo.png`,
       },
     },
+    {
+      resolve: `gatsby-plugin-mailchimp`,
+      options: {
+        endpoint:`https://gmail.us5.list-manage.com/subscribe/post?u=996097153c728f6ca69f50a35&amp;id=f0595f2d40`,
+      },
+    },
   ],
 }
