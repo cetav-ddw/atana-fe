@@ -1,6 +1,6 @@
 import React, { Component } from "react"
-import Button from "../components/ComponentButtons/buttons.js"
 import { Link } from "gatsby"
+import Button from "../components/ComponentButtons/buttons.js"
 import addToMailchimp from "gatsby-plugin-mailchimp"
 import "../styles/register.scss"
 
@@ -82,7 +82,7 @@ class Register extends Component {
   handleRender() {
     if (!this.state.registered) {
       return (
-        <div className="register__layout layout--form">
+        <div className="register__layout">
           <h1>Te damos la bienvenida</h1>
           <p>Solicite formar parte de Átana llenando el siguiente formulario</p>
           <form
@@ -93,18 +93,6 @@ class Register extends Component {
             novalidate
           >
             <div className="form__field">
-              <label htmlFor="formEmail">Correo electrónico</label>
-              <input
-                type="email"
-                value={this.state.formEmail}
-                onChange={event => this.handleInput(event)}
-                name="email"
-                id="formEmail"
-                required
-                placeholder="mi-correo@ejemplo"
-              />
-            </div>
-            <div className="form__field">
               <label htmlFor="formFirstname">Nombre</label>
               <input
                 type="text"
@@ -112,7 +100,6 @@ class Register extends Component {
                 onChange={event => this.handleInput(event)}
                 name="firstname"
                 id="formFirstName"
-                placeholder="Nombre"
               />
             </div>
             <div className="form__field">
@@ -123,7 +110,6 @@ class Register extends Component {
                 onChange={event => this.handleInput(event)}
                 name="lastname"
                 id="formLastName"
-                placeholder="Apellido"
               />
             </div>
             <div className="form__field">
@@ -134,13 +120,23 @@ class Register extends Component {
                 onChange={event => this.handleInput(event)}
                 name="phone"
                 id="formPhone"
-                placeholder="000-000-000"
+              />
+            </div>
+            <div className="form__field">
+              <label htmlFor="formEmail">Correo electrónico <span className="required__field">(Requerido)</span></label>
+              <input
+                type="email"
+                value={this.state.formEmail}
+                onChange={event => this.handleInput(event)}
+                name="email"
+                id="formEmail"
+                required
               />
             </div>
             <p className="form__message message__error">{this.state.message}</p>
             <Button
               children="Subscribirse"
-              button="secondary"
+              button="primary"
               type="submit"
               buttonValue="Subscribe"
               buttonLabel="subscribe"
@@ -151,14 +147,14 @@ class Register extends Component {
       )
     } else if (this.state.registered === "error") {
       return (
-        <div className="register__layout layout--error">
-          <div className="section__wrapper register--error__layout">
+        <div className="register__layout">
+          <div className="section__wrapper">
             <h2>
               Algo salió mal, puede que el usuario ya solicitó una cuenta con
               Átana o que el usuario ya existe.
             </h2>
             <p className="form__message">
-              Error:{" "}
+              Error:
               <span className="message__error">{this.state.message}</span>
             </p>
             <Link to="/" className="btn btn--secondary">
@@ -169,8 +165,8 @@ class Register extends Component {
       )
     } else {
       return (
-        <div className="register__layout layout--success">
-          <div className="section__wrapper register--success__layout">
+        <div className="register__layout">
+          <div className="section__wrapper">
             <h2>
               Su proceso de registro se acaba de completar, le pedimos esperar 3
               días para que su cuenta sea creada y verificada.

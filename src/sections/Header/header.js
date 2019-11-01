@@ -10,7 +10,7 @@ const Header = () => {
   return (
     <div className="header">
       <div className="section__wrapper">
-        <Link to="/register">
+        <Link to="/">
           <img src="atana-logo.svg" alt="átana" className="header__logo" />
         </Link>
         <Menu />
