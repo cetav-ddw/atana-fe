@@ -1,7 +1,7 @@
-// Font
+//Font
 $mainFont: Poppins;
 
-// Layout
+//Layout
 $layoutSize: 960px;
 
 //Colors
@@ -12,6 +12,9 @@ $pink: #bd385b;
 $purple: #72146b;
 $salmon: #ef5147;
 $white: #fff;
+
+//Gradients
+$mainGradient: linear-gradient(135.76deg, #72146B 0%, #8B1C63 27.05%, #BD385B 47.92%, #EF5147 79.69%, #EF5B37 100%);
 
 //Breakpoints
 $large: 1367px;
