@@ -4,7 +4,6 @@ import "./buttons.scss"
 import classNames from "classnames"
 
 function Button({
-  children,
   button,
   type,
   action,
@@ -23,14 +22,12 @@ function Button({
       value={buttonValue}
       name={buttonLabel}
     >
-      {children}
     </button>
   )
 }
 
 Button.defaultProps = {
   action: () => console.log("Default function"),
-  children: "Botón",
   customStyle: "",
   button: PropTypes.oneOf(["primary", "secondary"]),
   type: PropTypes.oneOf(["submit", "reset", "button"]),
@@ -40,7 +37,6 @@ Button.defaultProps = {
 
 Button.propTypes = {
   action: PropTypes.func,
-  children: PropTypes.node,
   customStyle: PropTypes.string,
   button: PropTypes.string,
   type: PropTypes.string,

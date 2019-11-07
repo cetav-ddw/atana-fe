@@ -5,10 +5,10 @@ import { Link } from "gatsby"
 const Menu = () => (
   <React.Fragment>
     <div className="nav__menu">
-      <Link to="" className="nav__link">
+      <Link to="/" className="nav__link">
         iniciar sesión
       </Link>
-      <Link to="/register" className="nav__btn btn btn--primary">
+      <Link to="/registro" className="nav__btn btn btn--primary">
         Suscribirse
       </Link>
     </div>

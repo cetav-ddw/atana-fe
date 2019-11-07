@@ -22,18 +22,11 @@ class Register extends Component {
 
   handleSubmit(e) {
     e.preventDefault()
-    const { formEmail, formFirstName, formLastName, formPhone } = this.state
-    if (
-      formEmail !== "" &&
-      formFirstName !== "" &&
-      formLastName !== "" &&
-      formPhone !== ""
-    ) {
-      this.setState(
-        {
-          message: "Procesando su solicitud",
-        },
-        () => {
+    const { formEmail } = this.state
+    if (formEmail !== "") {
+      this.setState({
+        message: "Procesando su solicitud",
+      },() => {
           addToMailchimp(formEmail, {
             FIRSTNAME: formFirstName,
             LASTNAME: formLastName,
@@ -67,7 +60,7 @@ class Register extends Component {
     } else {
       this.setState({
         message:
-          "Asegurese de primero llenar todos los campos con la información solicitada.",
+          "Asegurese de llenar el campo de la contraseña.",
       })
     }
   }
@@ -83,12 +76,10 @@ class Register extends Component {
     if (!this.state.registered) {
       return (
         <div className="register__layout">
-          <h1>Te damos la bienvenida</h1>
-          <p>Solicite formar parte de Átana llenando el siguiente formulario</p>
+          <h1>Suscribirse</h1>
+          <p className="text--helpers">Para suscribirse llene los siguientes datos</p>
           <form
             onSubmit={e => this.handleSubmit(e)}
-            method="post"
-            target="_blank"
             className="form"
             novalidate
           >
@@ -134,15 +125,11 @@ class Register extends Component {
               />
             </div>
             <p className="form__message message__error">{this.state.message}</p>
-            <Button
-              children="Subscribirse"
-              button="primary"
-              type="submit"
-              buttonValue="Subscribe"
-              buttonLabel="subscribe"
-              customStyle="form__btn"
-            />
+            <Button button="primary" type="submit" buttonValue="Suscribirse" buttonLabel="suscribirse" customStyle="form__btn">
+              Suscribirse
+            </Button>
           </form>
+          <p className="text--helpers">Esta es la versión beta de Átana</p>
         </div>
       )
     } else if (this.state.registered === "error") {
@@ -166,15 +153,18 @@ class Register extends Component {
     } else {
       return (
         <div className="register__layout">
-          <div className="section__wrapper">
-            <h2>
-              Su proceso de registro se acaba de completar, le pedimos esperar 3
-              días para que su cuenta sea creada y verificada.
-            </h2>
-            <Link to="/" className="btn btn--secondary">
-              Regresar al Home
-            </Link>
-          </div>
+          <Link to="/" className="register__logo__container">
+            <img src="../atana-purple-logo.svg" alt="Átana" className="register__logo" />
+          </Link>
+          <h2>
+            Muchas gracias por registrarse en nuestra plataforma!
+          </h2>
+          <p>
+            Esta es un versión beta de Átana, por lo tanto en el lapso de algunos días se le enviará un correo para confirmar su suscripción.
+          </p>
+          <Link to="/" className="btn btn--secondary">
+            Regresar al Home
+          </Link>
         </div>
       )
     }
@@ -184,19 +174,16 @@ class Register extends Component {
     const renderView = this.handleRender()
     return (
       <section className="register">
-        <div className="register__nav">
-          <Link to="/" className="nav__logo__container">
-            <img src="atana-logo.svg" alt="átana" className="nav__logo" />
-          </Link>
-          {this.state.registered === false ? (
-            <Link to="/" className="nav__button">
-              Salir del proceso de registro
+        <img src="../slim-left-corner.svg" className="frame--left" alt="Átana decoración izquierda fondo"/>
+        <img src="../slim-right-corner.svg" className="frame--right" alt="Átana decoración derecha fondo"/>
+        <div className="section__wrapper">
+          <div className="register__nav">
+            <Link to="/" className="nav__logo__container">
+              <img src="../atana-logo.svg" alt="átana" className="nav__logo" />
             </Link>
-          ) : (
-            ""
-          )}
+          </div>
+          {renderView}
         </div>
-        {renderView}
       </section>
     )
   }
