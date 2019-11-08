@@ -1,0 +1,106 @@
+@import "../../styles//variables.scss";
+
+.register__layout {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: center;
+  margin: 0 auto;
+  width: 85%;
+}
+
+.register__wrapper {
+  margin: 0 auto;
+  max-width: $layoutSize;
+  padding: 0;
+
+  @media screen and (min-width: 700px) {
+    padding: 0 30px;
+  }
+}
+
+.form__field {
+  padding: 10px 0;
+  color: black;
+}
+
+.form__btn {
+  margin: 25px 0 0;
+  width: 100%;
+}
+
+.form__message {
+  padding: 25px 0;
+}
+
+.message__error {
+  color: $pink;
+}
+
+.required__field {
+  color: $pink;
+  font-size: 16px;
+}
+
+.register__layout h1{
+  color: $black;
+  font-size: 39px;
+
+  @media screen and (min-width: 700px) {
+    font-size: 30px;
+  }
+}
+
+.register__layout h2{
+  color: $black;
+  font-size: 20px;
+}
+
+.register__layout a{
+  text-decoration: none;
+  margin: 25px 0 0;
+}
+
+.form {
+  max-width: 500px;
+  padding: 25px 0;
+}
+
+.form input {
+  border: 1px solid #C4C4C4;
+  box-sizing: border-box;
+  border-radius: 5px;
+  display: block;
+  font-size: 17px;
+  padding: 10px;
+  width: 100%;
+}
+
+.btn {
+  background: $white;
+  border: 0;
+  border-radius: 10px;
+  cursor: pointer;
+  font-family: $mainFont;
+  font-style: normal;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 30px;
+  padding: 10px;
+  text-align: center;
+}
+
+.btn--primary {
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.35);
+  color: $purple;
+  font-size: 20px;
+  height: 60px;
+  letter-spacing: 0.2em;
+  transition: 0.5s;
+}
+
+.btn--primary:hover {
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.35);
+  transition: 0.5s;
+}

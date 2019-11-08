@@ -6,16 +6,40 @@
 }
 
 .frame--left {
+  display: none;
+
+  @media screen and (min-width: 700px) {
+    display: inline-block;
+    left: 0;
+    position:absolute;
+    top: 0;
+    z-index: -1;
+  }
+}
+
+.frame--top {
+  display: inline-block;
   left: 0;
   position:absolute;
   top: 0;
+  width: 100%;
   z-index: -1;
+
+  @media screen and (min-width: 700px) {
+    display: none;
+  }
 }
 
 .frame--right {
-  right: 0;
-  position: absolute;
-  z-index: -1;
+  display: none;
+
+  @media screen and (min-width: 700px) {
+    display: inline-block;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;
+  }
 }
 
 .text--helpers {
@@ -28,52 +52,22 @@
   flex-direction: column;
   height: 100%;
   justify-content: center;
-  width: 15%;
-}
-
-.form {
-  max-width: 500px;
-  padding: 25px 0;
   width: 100%;
-}
+  padding: 0 0 150px;
 
-.form__btn {
-  margin: 25px 0 0;
-  width: 100%;
-}
-
-.form__message {
-  padding: 25px 0;
-}
-
-.message__error {
-  color: $pink;
-  word-break: break-all;
-}
-
-.required__field {
-  color: $pink;
-  font-size: 16px;
-}
-
-.form input {
-  border: 1px solid #C4C4C4;
-  box-sizing: border-box;
-  border-radius: 5px;
-  display: block;
-  font-size: 17px;
-  padding: 10px;
-  width: 100%;
-}
-
-.form__field {
-  padding: 10px 0;
+  @media screen and (min-width: 700px) {
+    width: 15%;
+  }
 }
 
 .nav__logo__container {
-  max-width: 138px;
-  padding: 5%;
-  width: 100%;
+  padding: 0;
+  width: 120px;
+
+  @media screen and (min-width: 700px) {
+    padding: 5%;
+    width: 138px;
+  }
 }
 
 .nav__logo {
@@ -83,28 +77,4 @@
 .nav__button {
   color: $white;
   text-decoration: underline;
-}
-
-.register__layout {
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  justify-content: center;
-  margin: 0 auto;
-  width: 85%;
-}
-
-.register__layout h1{
-  color: $black;
-}
-
-.register__layout h2{
-  color: $black;
-  font-size: 20px;
-}
-
-.register__layout a{
-  text-decoration: none;
-  margin: 25px 0 0;
 }
