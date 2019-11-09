@@ -13,10 +13,10 @@ export default function svgAnimations(animations, base) {
     fetch(src)
       .then(res => res.text())
       .then(svg => {
+        new TimelineMax()
+        parent.style.display = "none"
         parent.innerHTML = svg + parent.innerHTML
-        parent.style.setProperty("display", "none")
-        if (!i) animations[txt](`#${txt}`, new TimelineMax())
-        return 1
+        return !i ? animations[txt](`#${txt}`, new TimelineMax()) : null
       })
   })
 }

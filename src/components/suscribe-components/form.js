@@ -10,8 +10,8 @@ const Form = () => {
   const [message, setMessage] = useState("");
   const [errorBackend, setError] = useState("");
 
-  const handleSubmit = (e) => {
-    e.preventDefault()
+  const handleSubmit = (event) => {
+    event.preventDefault()
     if (formEmail !== "") {
       setMessage("Procesando su solicitud");
       addToMailchimp(formEmail, {
@@ -45,7 +45,7 @@ const Form = () => {
       <h1>Suscribirse</h1>
       <p className="text--helpers">Para suscribirse llene los siguientes datos</p>
       <form
-        onSubmit={e => handleSubmit(e)}
+        onSubmit={event => handleSubmit(event)}
         className="form"
         novalidate
       >
@@ -90,7 +90,7 @@ const Form = () => {
             onChange={event => setEmail(event.target.value)}
             name="email"
             id="formEmail"
-            onBlur={() => clearWarnings}
+            onBlur={() => clearWarnings()}
             required
           />
         </div>
@@ -99,7 +99,6 @@ const Form = () => {
         <button
           className="btn btn--primary form__btn"
           type="submit"
-          onClick={() => handleSubmit}
           value="suscribirse"
           name="suscribirse"
           >

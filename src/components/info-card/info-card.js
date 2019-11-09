@@ -15,7 +15,7 @@ const InfoCard = ({
   Animation,
 }) => {
   return (
-    <div className={`container ${modifier}`}>
+    <div className={`container__card ${modifier}`}>
       <div className="container__info">
         <h3 className="info__tile">{title}</h3>
         <p className="info__paragraph">{paragraph}</p>
