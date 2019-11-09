@@ -21,8 +21,8 @@
 }
 
 .form__field {
-  padding: 10px 0;
   color: black;
+  padding: 10px 0;
 }
 
 .form__btn {
@@ -58,13 +58,13 @@
 }
 
 .register__layout a{
-  text-decoration: none;
   margin: 25px 0 0;
+  text-decoration: none;
 }
 
 .form {
-  max-width: 500px;
   padding: 25px 0;
+  width: 500px;
 }
 
 .form input {
@@ -103,4 +103,8 @@
 .btn--primary:hover {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.35);
   transition: 0.5s;
+}
+
+.text--helpers {
+  color: #979797;
 }

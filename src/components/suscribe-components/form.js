@@ -23,7 +23,7 @@ const Form = () => {
           setMessage("El correo que se ingresó inició un proceso de registro o ya tiene una cuenta con Átana. Por favor vuelva a intentarlo.");
           setError(`Error: ${data.msg}`)
         } else {
-          console.log("Succeed.")
+          console.log("Mensaje de exito, usted fue capaz de solicitar una cuenta. Este es un mensaje temporal y la página está en desarrollo.")
         }
       })
       .catch(err => {
@@ -34,6 +34,11 @@ const Form = () => {
       setMessage("Asegurese de llenar el campo requerido.");
     }
   }
+
+  const clearWarnings = () => {
+    setMessage("");
+    setError("");
+  }
   
   return (
     <div className="register__layout">
@@ -41,8 +46,6 @@ const Form = () => {
       <p className="text--helpers">Para suscribirse llene los siguientes datos</p>
       <form
         onSubmit={e => handleSubmit(e)}
-        method="post"
-        target="_blank"
         className="form"
         novalidate
       >
@@ -87,6 +90,7 @@ const Form = () => {
             onChange={event => setEmail(event.target.value)}
             name="email"
             id="formEmail"
+            onBlur={() => clearWarnings}
             required
           />
         </div>
@@ -95,10 +99,10 @@ const Form = () => {
         <button
           className="btn btn--primary form__btn"
           type="submit"
-          onClick={handleSubmit}
+          onClick={() => handleSubmit}
           value="suscribirse"
           name="suscribirse"
-        >
+          >
           Suscribirse
         </button>
       </form>

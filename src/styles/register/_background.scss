@@ -1,0 +1,41 @@
+.register {
+  padding: 50px;
+  position: relative;
+}
+
+.frame--left {
+  display: none;
+
+  @media screen and (min-width: 700px) {
+    display: inline-block;
+    left: 0;
+    position:absolute;
+    top: 0;
+    z-index: -1;
+  }
+}
+
+.frame--top {
+  display: inline-block;
+  left: 0;
+  position:absolute;
+  top: 0;
+  width: 100%;
+  z-index: -1;
+
+  @media screen and (min-width: 700px) {
+    display: none;
+  }
+}
+
+.frame--right {
+  display: none;
+
+  @media screen and (min-width: 700px) {
+    display: inline-block;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;
+  }
+}
