@@ -11,6 +11,7 @@ const Form = () => {
   const [errorBackend, setError] = useState("");
 
   const handleSubmit = (event) => {
+    console.log("First event is: ", event)
     event.preventDefault()
     if (formEmail !== "") {
       setMessage("Procesando su solicitud");
@@ -19,6 +20,7 @@ const Form = () => {
         LASTNAME: formLastName,
         PHONE: formPhone,
       }).then(data => {
+        console.log("Data is: ", data)
         if (data.result === "error") {
           setMessage("El correo que se ingresó inició un proceso de registro o ya tiene una cuenta con Átana. Por favor vuelva a intentarlo.");
           setError(`Error: ${data.msg}`)
@@ -45,12 +47,12 @@ const Form = () => {
       <h1>Suscribirse</h1>
       <p className="text--helpers">Para suscribirse llene los siguientes datos</p>
       <form
-        onSubmit={event => handleSubmit(event)}
+        onSubmit={handleSubmit}
         className="form"
-        novalidate
+        noValidate
       >
         <div className="form__field">
-          <label htmlFor="formFirstname">Nombre</label>
+          <label htmlFor="formFirstName">Nombre</label>
           <input
             type="text"
             value={formFirstName}
@@ -101,8 +103,8 @@ const Form = () => {
           type="submit"
           value="suscribirse"
           name="suscribirse"
-          >
-          Suscribirse
+        >
+        Suscribirse
         </button>
       </form>
       <p className="text--helpers">Está es la versión beta de Átana</p>
