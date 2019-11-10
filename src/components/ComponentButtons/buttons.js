@@ -21,8 +21,7 @@ function Button({
       onClick={action}
       value={buttonValue}
       name={buttonLabel}
-    >
-    </button>
+    ></button>
   )
 }
 

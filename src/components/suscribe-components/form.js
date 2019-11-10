@@ -3,54 +3,55 @@ import addToMailchimp from "gatsby-plugin-mailchimp"
 import "./form.scss"
 
 const Form = () => {
-  const [formFirstName, setFirstName] = useState("");
-  const [formLastName, setLastName] = useState("");
-  const [formPhone, setPhone] = useState("");
-  const [formEmail, setEmail] = useState("");
-  const [message, setMessage] = useState("");
-  const [errorBackend, setError] = useState("");
+  const [formFirstName, setFirstName] = useState("")
+  const [formLastName, setLastName] = useState("")
+  const [formPhone, setPhone] = useState("")
+  const [formEmail, setEmail] = useState("")
+  const [message, setMessage] = useState("")
+  const [errorBackend, setError] = useState("")
 
-  const handleSubmit = (event) => {
-    console.log("First event is: ", event)
+  const handleSubmit = event => {
     event.preventDefault()
     if (formEmail !== "") {
-      setMessage("Procesando su solicitud");
+      setMessage("Procesando su solicitud")
       addToMailchimp(formEmail, {
         FIRSTNAME: formFirstName,
         LASTNAME: formLastName,
         PHONE: formPhone,
-      }).then(data => {
-        console.log("Data is: ", data)
-        if (data.result === "error") {
-          setMessage("El correo que se ingresó inició un proceso de registro o ya tiene una cuenta con Átana. Por favor vuelva a intentarlo.");
-          setError(`Error: ${data.msg}`)
-        } else {
-          console.log("Mensaje de exito, usted fue capaz de solicitar una cuenta. Este es un mensaje temporal y la página está en desarrollo.")
-        }
       })
-      .catch(err => {
-        setMessage("Algo salió mal con la solicitud");
-        setError(`Error: ${err}`)
-      })
+        .then(data => {
+          if (data.result === "error") {
+            setMessage(
+              "El correo que se ingresó inició un proceso de registro o ya tiene una cuenta con Átana. Por favor vuelva a intentarlo."
+            )
+            setError(`Error: ${data.msg}`)
+          } else {
+            console.log(
+              "Mensaje de exito, usted fue capaz de solicitar una cuenta. Este es un mensaje temporal y la página está en desarrollo."
+            )
+          }
+        })
+        .catch(err => {
+          setMessage("Algo salió mal con la solicitud")
+          setError(`Error: ${err}`)
+        })
     } else {
-      setMessage("Asegurese de llenar el campo requerido.");
+      setMessage("Asegurese de llenar el campo requerido.")
     }
   }
 
   const clearWarnings = () => {
-    setMessage("");
-    setError("");
+    setMessage("")
+    setError("")
   }
-  
+
   return (
     <div className="register__layout">
       <h1>Suscribirse</h1>
-      <p className="text--helpers">Para suscribirse llene los siguientes datos</p>
-      <form
-        onSubmit={handleSubmit}
-        className="form"
-        noValidate
-      >
+      <p className="text--helpers">
+        Para suscribirse llene los siguientes datos
+      </p>
+      <form onSubmit={handleSubmit} className="form" noValidate>
         <div className="form__field">
           <label htmlFor="formFirstName">Nombre</label>
           <input
@@ -104,7 +105,7 @@ const Form = () => {
           value="suscribirse"
           name="suscribirse"
         >
-        Suscribirse
+          Suscribirse
         </button>
       </form>
       <p className="text--helpers">Está es la versión beta de Átana</p>
