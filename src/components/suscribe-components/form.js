@@ -8,7 +8,6 @@ const Form = () => {
   const [formPhone, setPhone] = useState("")
   const [formEmail, setEmail] = useState("")
   const [message, setMessage] = useState("")
-  const [errorBackend, setError] = useState("")
 
   const handleSubmit = event => {
     event.preventDefault()
@@ -22,18 +21,16 @@ const Form = () => {
         .then(data => {
           if (data.result === "error") {
             setMessage(
-              "El correo que se ingresó inició un proceso de registro o ya tiene una cuenta con Átana. Por favor vuelva a intentarlo."
+              "El correo que se ingresó tiene errores, asegurece que el formato es valido, y que aún no tiene una cuenta con Átana. Por favor vuelva a intentarlo."
             )
-            setError(`Error: ${data.msg}`)
           } else {
-            console.log(
-              "Mensaje de exito, usted fue capaz de solicitar una cuenta. Este es un mensaje temporal y la página está en desarrollo."
+            setMessage(
+              "Muchas gracias por registrarse! Pronto enviaremos a su correo una confirmación de su suscripción."
             )
           }
         })
         .catch(err => {
           setMessage("Algo salió mal con la solicitud")
-          setError(`Error: ${err}`)
         })
     } else {
       setMessage("Asegurese de llenar el campo requerido.")
@@ -42,7 +39,6 @@ const Form = () => {
 
   const clearWarnings = () => {
     setMessage("")
-    setError("")
   }
 
   return (
@@ -51,7 +47,7 @@ const Form = () => {
       <p className="text--helpers">
         Para suscribirse llene los siguientes datos
       </p>
-      <form onSubmit={handleSubmit} className="form" noValidate>
+      <form onSubmit={handleSubmit} className="form">
         <div className="form__field">
           <label htmlFor="formFirstName">Nombre</label>
           <input
@@ -94,11 +90,10 @@ const Form = () => {
             name="email"
             id="formEmail"
             onBlur={() => clearWarnings()}
-            required
+            pattern="[a-z0-9!#$%&'*+\/=?^_`{|}~.-]+@[a-z0-9-]+(\.[a-z0-9-]+)*"
           />
         </div>
         <p className="form__message message__error">{message}</p>
-        <p className="form__message message__error">{errorBackend}</p>
         <button
           className="btn btn--primary form__btn"
           type="submit"
