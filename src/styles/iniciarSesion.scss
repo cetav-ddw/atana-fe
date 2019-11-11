@@ -1,0 +1,18 @@
+.head {
+  background: url('../images/svg/wave-top.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 40vh;
+  width: 100%;
+}
+
+.head__logo {
+  display: block;
+  margin:0 auto;
+  padding-top: 15px;
+  width: 45%;
+}
+
+.head__wave {
+  display: none;
+}
