@@ -1,0 +1,96 @@
+@import "../../styles/variables.scss";
+
+.register {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+  justify-content: space-around;
+}
+
+.register__nav {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: center;
+  width: 50%;
+}
+
+.form {
+  max-width: 500px;
+  padding: 25px 0;
+  width: 100%;
+}
+
+.form__btn {
+  margin: 25px 0 0;
+  width: 100%;
+}
+
+.form__message {
+  padding: 25px 0;
+}
+
+.message__error {
+  color: $pink;
+  word-break: break-all;
+}
+
+.required__field {
+  color: $pink;
+  font-size: 16px;
+}
+
+.form input {
+  border: 1px solid #C4C4C4;
+  box-sizing: border-box;
+  border-radius: 5px;
+  display: block;
+  font-size: 17px;
+  padding: 10px;
+  width: 100%;
+}
+
+.form__field {
+  padding: 10px 0;
+}
+
+.nav__logo__container {
+  max-width: 500px;
+  padding: 5%;
+  width: 100%;
+}
+
+.nav__logo {
+  width: 100%;
+}
+
+.nav__button {
+  color: $white;
+  text-decoration: underline;
+}
+
+.register__layout {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: center;
+  padding: 0 5%;
+  width: 45%;
+}
+
+.register__layout h1{
+  color: $black;
+}
+
+.register__layout h2{
+  color: $black;
+  font-size: 20px;
+}
+
+.register__layout a{
+  text-decoration: none;
+  margin: 25px 0 0;
+}
