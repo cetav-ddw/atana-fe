@@ -1,18 +1,42 @@
 .head {
-  background: url('../images/svg/wave-top.svg');
+  background: url("../images/svg/wave-top.svg");
   background-repeat: no-repeat;
   background-size: cover;
-  height: 40vh;
+  height: 38vh;
   width: 100%;
+
+  @media screen and (min-width: 529px) {
+    height: 48vh;
+  }
+
+  @media screen and (min-width: 768px) {
+    background: url("../images/svg/slim-left-corner.svg");
+    background-repeat: no-repeat;
+    height: 90vh;
+  }
 }
 
 .head__logo {
+  cursor: pointer;
   display: block;
-  margin:0 auto;
-  padding-top: 15px;
-  width: 45%;
+  margin: 0 auto;
+  padding-top: 18px;
+  width: 40%;
+
+  @media screen and(min-width: 768px) {
+    margin-left: 40px;
+    padding-top: 40px;
+    width: 18%;
+  }
 }
 
 .head__wave {
   display: none;
+
+  @media screen and (min-width: 768px) {
+    bottom: 0;
+    display: block;
+    position: absolute;
+    right: 0;
+  }
 }
