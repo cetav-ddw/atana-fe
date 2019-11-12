@@ -2,7 +2,7 @@ import React, { useState } from "react"
 import addToMailchimp from "gatsby-plugin-mailchimp"
 import "./form.scss"
 
-const Form = () => {
+const Form = ({ action }) => {
   const [formFirstName, setFirstName] = useState("")
   const [formLastName, setLastName] = useState("")
   const [formPhone, setPhone] = useState("")
@@ -24,9 +24,7 @@ const Form = () => {
               "El correo que se ingresó tiene errores, asegurece que el formato es valido, y que aún no tiene una cuenta con Átana. Por favor vuelva a intentarlo."
             )
           } else {
-            setMessage(
-              "Muchas gracias por registrarse! Pronto enviaremos a su correo una confirmación de su suscripción."
-            )
+            action(true)
           }
         })
         .catch(err => {
