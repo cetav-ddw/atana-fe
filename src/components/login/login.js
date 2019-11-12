@@ -2,8 +2,9 @@ import React, { Component } from "react"
 import Button from "../ComponentButtons/buttons"
 import addToMailchimp from "gatsby-plugin-mailchimp"
 import "./login.scss"
+import { Link } from "gatsby";
 
-class Lol extends Component {
+class Form extends Component {
   constructor() {
     super()
     this.state = {
@@ -19,15 +20,15 @@ class Lol extends Component {
 
   handleSubmit(e) {
     e.preventDefault()
-    const { formEmail, formPassword} = this.state
+    const { formEmail, formPassword } = this.state
     if (
       formEmail !== "" &&
-      formPassword !== "" 
+      formPassword !== ""
     ) {
       this.setState(
         () => {
           addToMailchimp(formEmail, {
-            FIRSTNAME: formPassword,
+            formPassword,
           })
             .then(data => {
               if (data.result === "error") {
@@ -39,7 +40,6 @@ class Lol extends Component {
                     this.setState({
                       message: data.msg,
                     })
-                    console.log(data)
                   }
                 )
               } else {
@@ -55,13 +55,11 @@ class Lol extends Component {
             })
         }
       )
-    } else if (formEmail ^ formPassword ) {
-
     }
     else {
       this.setState({
         message:
-          "Asegurese de llenar todos los campos con la información solicitada.",
+          "Ingrese una dirección de correo electrónico y contraseña válidos.",
       })
     }
   }
@@ -76,37 +74,38 @@ class Lol extends Component {
   handleRender() {
     if (!this.state.registered) {
       return (
-        <div className="register__layout">
-          <h1>Iniciar sesión</h1>
-          <p>Ingrense sus datos para iniciar</p>
+        <div className="login">
+          <h1 className="login__title">Iniciar sesión</h1>
+          <p className="login__sentence">Ingrese sus datos para iniciar</p>
           <form
-            onSubmit={e => this.handleSubmit(e)}
-            method="post"
-            target="_blank"
+            onSubmit={event => this.handleSubmit(event)}
             className="form"
-            novalidate
           >
             <div className="form__field">
               <label htmlFor="formEmail">Correo electrónico</label>
               <input
                 type="email"
+                name="email"
                 value={this.state.formEmail}
                 onChange={event => this.handleInput(event)}
-                name="email"
                 id="formEmail"
+                className="form__input"
               />
+              <img src="../user-icon.svg" aria-hidden="true" className="form__input-icon" alt="" aria-hidden="true"></img>
             </div>
             <div className="form__field">
               <label htmlFor="formPassword">Contraseña</label>
               <input
                 type="password"
+                name="firstname"
                 value={this.state.formPassword}
                 onChange={event => this.handleInput(event)}
-                name="firstname"
                 id="formPassword"
+                className="form__input"
               />
+              <img src="../password-icon.svg" aria-hidden="true" className="form__input-icon" alt="" aria-hidden="true"></img>
             </div>
-            <p className="form__message message__error">{this.state.message}</p>
+            <p className="form__message">{this.state.message}</p>
             <Button
               children="Inciar sesión"
               button="primary"
@@ -116,16 +115,17 @@ class Lol extends Component {
               customStyle="form__btn"
             />
           </form>
+          <div className="login__signup">
+            <p className="signup__question">¿No tienes cuenta?</p>
+            <Link to="/suscribirse" className="signup__link">Crear cuenta</Link>
+          </div>
+          
         </div>
       )
     } else {
       return (
-        <div className="register__layout">
-          <div className="section__wrapper">
-            <h2>
-              Vista en construcción
-            </h2>
-          </div>
+        <div className="section__wrapper">
+          <p>Vista en construcción</p>
         </div>
       )
     }
@@ -134,11 +134,11 @@ class Lol extends Component {
   render() {
     const renderView = this.handleRender()
     return (
-      <section className="register">
+      <React.Fragment>
         {renderView}
-      </section>
+      </React.Fragment>
     )
   }
 }
 
-export default Lol
+export default Form
