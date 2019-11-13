@@ -1,6 +1,5 @@
 import React, { Component } from "react"
 import Button from "../ComponentButtons/buttons"
-import addToMailchimp from "gatsby-plugin-mailchimp"
 import "./login.scss"
 import { Link } from "gatsby";
 
@@ -26,34 +25,19 @@ class Form extends Component {
       formPassword !== ""
     ) {
       this.setState(
-        () => {
-          addToMailchimp(formEmail, {
-            formPassword,
-          })
-            .then(data => {
-              if (data.result === "error") {
-                this.setState(
-                  {
-                    registered: "error",
-                  },
-                  () => {
-                    this.setState({
-                      message: data.msg,
-                    })
-                  }
-                )
-              } else {
-                this.setState({
-                  registered: true,
-                })
-              }
+        (data => {
+          if (data.result === "error") {
+            this.setState(
+              {
+                registered: "error",
+              },
+            )
+          } else {
+            this.setState({
+              registered: true,
             })
-            .catch(err => {
-              this.setState({
-                message: err,
-              })
-            })
-        }
+          }
+        })
       )
     }
     else {
@@ -91,7 +75,7 @@ class Form extends Component {
                 id="formEmail"
                 className="form__input"
               />
-              <img src="../user-icon.svg" aria-hidden="true" className="form__input-icon" alt="" aria-hidden="true"></img>
+              <img src="../user-icon.svg" className="form__input-icon" alt="" aria-hidden="true"></img>
             </div>
             <div className="form__field">
               <label htmlFor="formPassword">Contraseña</label>
@@ -103,7 +87,7 @@ class Form extends Component {
                 id="formPassword"
                 className="form__input"
               />
-              <img src="../password-icon.svg" aria-hidden="true" className="form__input-icon" alt="" aria-hidden="true"></img>
+              <img src="../password-icon.svg" className="form__input-icon" alt="" aria-hidden="true"></img>
             </div>
             <p className="form__message">{this.state.message}</p>
             <Button
@@ -119,7 +103,7 @@ class Form extends Component {
             <p className="signup__question">¿No tienes cuenta?</p>
             <Link to="/suscribirse" className="signup__link">Crear cuenta</Link>
           </div>
-          
+
         </div>
       )
     } else {

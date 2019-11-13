@@ -40,7 +40,7 @@ const animations = {
     tl.set(s, { display: "block" })
       .from(s, 1, { opacity: 0 })
       .from(`${s} rect:nth-child(5)`, 1, { width: 0 })
-      .staggerFrom(`${s} rect:nth-child(-n+4)`, 1, { height: 0 }, 0.5)
+      .staggerFrom(`${s} rect:nth-child(-n+4)`, 1, { height: 0 }, -0.5)
       .from(`${s} path`, 2, { "stroke-dashoffset": 238 })
       .staggerFrom(`${s} circle`, 1, { opacity: 0 }, -0.5, "-=2")
       .to(s, 1, { opacity: 0 }, "+=1")

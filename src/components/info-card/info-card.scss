@@ -1,6 +1,6 @@
 @import "../../styles/variables.scss";
 
-.container {
+.container__card {
   display: flex;
   flex-direction: column-reverse;
   justify-content: space-between;
@@ -9,12 +9,13 @@
   @media screen and (min-width: $medium) {
     align-items: center;
     flex-direction: row;
+    padding: 60px 0;
   }
 }
 
 .container__animation {
   margin: 0 auto;
-  
+
   @media screen and (min-width: $medium) {
     margin: none;
   }
@@ -52,7 +53,7 @@
   padding-bottom: 15px;
 
   @media screen and (min-width: $large) {
-    font-size: 27px;
+    font-size: 20px;
   }
 }
 
@@ -61,7 +62,7 @@
   width: 100%;
 }
 
-.info__link{
+.info__link {
   color: $pink;
   font-size: 12px;
   text-decoration: underline;
