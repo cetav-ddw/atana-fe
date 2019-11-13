@@ -26,17 +26,17 @@ class Register extends Component {
           <img
             src="../slim-left-corner.svg"
             className="frame--left"
-            alt="Átana decoración izquierda fondo"
+            alt=""
           />
           <img
             src="../slim-top-screen.svg"
             className="frame--top"
-            alt="Átana decoración arriba fondo"
+            alt=""
           />
           <img
             src="../slim-right-corner.svg"
             className="frame--right"
-            alt="Átana decoración derecha fondo"
+            alt=""
           />
           <div className="register__nav">
             <Link to="/" className="nav__logo__container">

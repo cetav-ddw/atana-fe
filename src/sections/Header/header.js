@@ -21,7 +21,7 @@ const Header = () => {
         <p className="header__text">
           De una manera más fácil, rápida y sencilla.{" "}
         </p>
-        <Link to="/register" className="header__btn btn btn--primary">
+        <Link to="/registro" className="header__btn btn btn--primary">
           Suscribirse
         </Link>
         <div className="header__animation">
