@@ -4,6 +4,7 @@ import "./buttons.scss"
 import classNames from "classnames"
 
 function Button({
+  children,
   button,
   type,
   action,
@@ -14,18 +15,20 @@ function Button({
   const mainClassNames = classNames(`btn btn--primary ${customStyle}`)
   const secondaryClassNames = classNames(`btn btn--secondary ${customStyle}`)
   const btnStyle = button === "primary" ? mainClassNames : secondaryClassNames
+  console.log("Default Value: ", buttonValue);
   return (
     <button
       className={btnStyle}
       type={type}
       onClick={action}
-      value={buttonValue}
+      {...buttonValue !== "" ? value={buttonValue} : ""}
       name={buttonLabel}
-    ></button>
+    >{children}</button>
   )
 }
 
 Button.defaultProps = {
+  children: "",
   action: () => console.log("Default function"),
   customStyle: "",
   button: PropTypes.oneOf(["primary", "secondary"]),
@@ -35,6 +38,7 @@ Button.defaultProps = {
 }
 
 Button.propTypes = {
+  children: PropTypes.node,
   action: PropTypes.func,
   customStyle: PropTypes.string,
   button: PropTypes.string,

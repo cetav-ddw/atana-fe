@@ -1,12 +1,11 @@
 import React, { useState } from "react"
 import "./form.scss"
 
-const Form = ({ sendDataTo, isRegister }) => {
-  const [message, setMessage] = useState("");
+const Form = ({ handleService, handleMessages, messageText}) => {
   const [formFields, setFormFields] = useState({
+    email: "",
     firstName: "",
     lastName: "",
-    email: "",
     phone: ""
   })
 
@@ -17,34 +16,9 @@ const Form = ({ sendDataTo, isRegister }) => {
     })
   }
 
-  const handleSubmit = event => {
+  function handleSubmit (event) {
     event.preventDefault()
-    if (formFields.email !== "") {
-      setMessage("Procesando su solicitud")
-      sendDataTo(formFields.email, {
-        FIRSTNAME: formFields.firstName,
-        LASTNAME: formFields.lastName,
-        PHONE: formFields.phone,
-      })
-        .then(data => {
-          if (data.result === "error") {
-            setMessage(
-              "El correo que se ingresó tiene errores, asegurece que el formato es valido, y que aún no tiene una cuenta con Átana. Por favor vuelva a intentarlo."
-            )
-          } else {
-            isRegister(true)
-          }
-        })
-        .catch(err => {
-          setMessage("Algo salió mal con la solicitud")
-        })
-    } else {
-      setMessage("Asegurese de llenar el campo requerido.")
-    }
-  }
-
-  const clearWarnings = () => {
-    setMessage("")
+    handleService(formFields)
   }
 
   return (
@@ -60,7 +34,7 @@ const Form = ({ sendDataTo, isRegister }) => {
             type="text"
             value={formFields.firstName}
             onChange={(event) => handleFormFields(event)}
-            name="firstname"
+            name="firstName"
             id="formFirstName"
           />
         </div>
@@ -70,7 +44,7 @@ const Form = ({ sendDataTo, isRegister }) => {
             type="text"
             value={formFields.lastName}
             onChange={(event) => handleFormFields(event)}
-            name="lastname"
+            name="lastName"
             id="formLastName"
           />
         </div>
@@ -95,11 +69,12 @@ const Form = ({ sendDataTo, isRegister }) => {
             onChange={(event) => handleFormFields(event)}
             name="email"
             id="formEmail"
-            onBlur={() => clearWarnings()}
+            onBlur={() => handleMessages()}
             pattern="[a-z0-9!#$%&'*+\/=?^_`{|}~.-]+@[a-z0-9-]+(\.[a-z0-9-]+)*"
+            required
           />
         </div>
-        <p className="form__message message__error">{message}</p>
+        {messageText !== "" ? <p className="form__message form__error">{messageText}</p> : ""}
         <button
           className="btn btn--primary form__btn"
           type="submit"
