@@ -1,22 +1,30 @@
 import React, { useState } from "react"
-import addToMailchimp from "gatsby-plugin-mailchimp"
 import "./form.scss"
 
-const Form = ({ action }) => {
-  const [formFirstName, setFirstName] = useState("")
-  const [formLastName, setLastName] = useState("")
-  const [formPhone, setPhone] = useState("")
-  const [formEmail, setEmail] = useState("")
-  const [message, setMessage] = useState("")
+const Form = ({ sendDataTo, isRegister }) => {
+  const [message, setMessage] = useState("");
+  const [formFields, setFormFields] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    phone: ""
+  })
+
+  function handleFormFields(event) {
+    setFormFields({
+      ...formFields,
+      [event.target.name]: event.target.value
+    })
+  }
 
   const handleSubmit = event => {
     event.preventDefault()
-    if (formEmail !== "") {
+    if (formFields.email !== "") {
       setMessage("Procesando su solicitud")
-      addToMailchimp(formEmail, {
-        FIRSTNAME: formFirstName,
-        LASTNAME: formLastName,
-        PHONE: formPhone,
+      sendDataTo(formFields.email, {
+        FIRSTNAME: formFields.firstName,
+        LASTNAME: formFields.lastName,
+        PHONE: formFields.phone,
       })
         .then(data => {
           if (data.result === "error") {
@@ -24,7 +32,7 @@ const Form = ({ action }) => {
               "El correo que se ingresó tiene errores, asegurece que el formato es valido, y que aún no tiene una cuenta con Átana. Por favor vuelva a intentarlo."
             )
           } else {
-            action(true)
+            isRegister(true)
           }
         })
         .catch(err => {
@@ -50,8 +58,8 @@ const Form = ({ action }) => {
           <label htmlFor="formFirstName">Nombre</label>
           <input
             type="text"
-            value={formFirstName}
-            onChange={event => setFirstName(event.target.value)}
+            value={formFields.firstName}
+            onChange={(event) => handleFormFields(event)}
             name="firstname"
             id="formFirstName"
           />
@@ -60,8 +68,8 @@ const Form = ({ action }) => {
           <label htmlFor="formLastname">Apellido</label>
           <input
             type="text"
-            value={formLastName}
-            onChange={event => setLastName(event.target.value)}
+            value={formFields.lastName}
+            onChange={(event) => handleFormFields(event)}
             name="lastname"
             id="formLastName"
           />
@@ -70,8 +78,8 @@ const Form = ({ action }) => {
           <label htmlFor="formPhone">Número de teléfono</label>
           <input
             type="tel"
-            value={formPhone}
-            onChange={event => setPhone(event.target.value)}
+            value={formFields.phone}
+            onChange={(event) => handleFormFields(event)}
             name="phone"
             id="formPhone"
           />
@@ -83,8 +91,8 @@ const Form = ({ action }) => {
           </label>
           <input
             type="email"
-            value={formEmail}
-            onChange={event => setEmail(event.target.value)}
+            value={formFields.email}
+            onChange={(event) => handleFormFields(event)}
             name="email"
             id="formEmail"
             onBlur={() => clearWarnings()}
@@ -95,8 +103,6 @@ const Form = ({ action }) => {
         <button
           className="btn btn--primary form__btn"
           type="submit"
-          value="suscribirse"
-          name="suscribirse"
         >
           Suscribirse
         </button>

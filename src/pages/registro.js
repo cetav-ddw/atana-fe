@@ -1,4 +1,5 @@
 import React, { Component } from "react"
+import addToMailchimp from "gatsby-plugin-mailchimp"
 import { Link } from "gatsby"
 import Form from "../components/suscribe-components/form"
 import Message from "../components/success-message/success-message"
@@ -29,7 +30,7 @@ class Register extends Component {
             </Link>
           </div>
           <div className="register__wrapper">
-            <Form action={this.handleRegistration} />
+            <Form sendDataTo={addToMailchimp} isRegister={this.handleRegistration} />
           </div>
         </section>
       )
