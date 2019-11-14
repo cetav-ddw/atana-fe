@@ -1,41 +1,44 @@
-.frame--left {
-  display: none;
-
-  @media screen and (min-width: 700px) {
-    display: inline-block;
-    left: 0;
-    position:absolute;
-    top: 0;
-    z-index: -1;
-  }
-}
-
-.frame--top {
-  display: inline-block;
-  left: 0;
-  position:absolute;
-  top: 0;
-  width: 100%;
-  z-index: -1;
-
-  @media screen and (min-width: 700px) {
-    display: none;
-  }
-}
-
-.frame--right {
-  display: none;
-
-  @media screen and (min-width: 700px) {
-    display: inline-block;
-    bottom: 0;
-    right: 0;
-    position: absolute;
-    z-index: -1;
-  }
-}
-
 .register {
+  background-image: url('../../static/slim-top-screen.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
   padding: 50px;
   position: relative;
+
+  @media screen and (min-width: 700px){
+    background-image: none;
+  }
+}
+
+.register::before {
+  content: "";
+  background-image: none;
+
+  @media screen and (min-width: 700px) {
+    background-image: url('../../static/slim-left-corner.svg');
+    background-repeat: no-repeat;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: -1;
+  }
+}
+
+.register::after {
+  content: "";
+  background-image: none;
+
+  @media screen and (min-width: 700px) {
+    background-image: url('../../static/slim-right-corner.svg');
+    background-position: right;
+    background-repeat: no-repeat;
+    height: 100%;
+    right: 0;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    z-index: -1;
+  }
 }
