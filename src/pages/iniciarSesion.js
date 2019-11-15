@@ -11,7 +11,7 @@ class LoginPage extends Component {
           <Link to="/">
             <img src="../atana-logo.svg" className="head__logo" alt=""></img>
           </Link>
-          <img src="../slim-right-corner.svg" className="head__wave" alt="" aria-hidden="true"></img>
+          <img src="../slim-right-corner.svg" className="head__wave" alt="" aria-hidden="true"/>
         </div>
         <Login />
       </React.Fragment>

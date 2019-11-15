@@ -13,5 +13,5 @@ export default ({type,name,idName,formType,value,change,fieldName,inputIcon
     value={value}
     onChange={change}
   />
-  <img src={inputIcon} className="form__input-icon" alt="" aria-hidden="true" />
+  <img src={inputIcon} className="form__input-icon" alt="" aria-hidden="true"/>
 </div>
