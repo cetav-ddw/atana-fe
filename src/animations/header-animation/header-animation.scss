@@ -1,8 +1,10 @@
 .container__svg {
   height: 200px;
   padding: 25px;
-  position: relative;
+  position: absolute;
   text-align: center;
+  top: 23vh;
+  left: 55vw;
 }
 
 .svg__paragraph {
@@ -10,12 +12,12 @@
   display: block;
   text-transform: uppercase;
   max-width: 250px;
+  padding-top: 30px;
   text-align: center;
 }
 
 #paperplane {
-  path:nth-child(n + 3),
-  path:nth-child(-n + 11) {
+  path:nth-child(n + 3):nth-child(-n + 11) {
     stroke-dasharray: 30;
     stroke-dashoffset: 0;
   }
@@ -33,3 +35,4 @@
     }
   }
 }
+
