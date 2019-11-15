@@ -62,7 +62,7 @@ class Form extends Component {
           <h1 className="login__title">Iniciar sesión</h1>
           <p className="login__sentence">Ingrese sus datos para iniciar</p>
           <form
-            onSubmit={event => this.handleSubmit(event)}
+            onSubmit={this.handleSubmit}
             className="form"
           >
             <div className="form__field">
@@ -71,11 +71,11 @@ class Form extends Component {
                 type="email"
                 name="email"
                 value={this.state.formEmail}
-                onChange={event => this.handleInput(event)}
+                onChange={this.handleInput}
                 id="formEmail"
                 className="form__input"
               />
-              <img src="../user-icon.svg" className="form__input-icon" alt="" aria-hidden="true"></img>
+              <img src="../user-icon.svg" className="form__input-icon" alt="" aria-hidden="true"/>
             </div>
             <div className="form__field">
               <label htmlFor="formPassword">Contraseña</label>
@@ -83,11 +83,11 @@ class Form extends Component {
                 type="password"
                 name="firstname"
                 value={this.state.formPassword}
-                onChange={event => this.handleInput(event)}
+                onChange={this.handleInput}
                 id="formPassword"
                 className="form__input"
               />
-              <img src="../password-icon.svg" className="form__input-icon" alt="" aria-hidden="true"></img>
+              <img src="../password-icon.svg" className="form__input-icon" alt="" aria-hidden="true"/>
             </div>
             <p className="form__message">{this.state.message}</p>
             <Button
