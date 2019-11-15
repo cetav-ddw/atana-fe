@@ -6,7 +6,7 @@ import Message from "../components/success-message/success-message"
 import "../styles/register.scss"
 
 const Register = () => {
-  const [register, setRegistration] = useState(false);
+  const [registration, setRegistration] = useState(false);
   const [message, setMessage] = useState("");
 
   function subscribeService({ email, firstName, lastName, phone }) {
@@ -29,7 +29,7 @@ const Register = () => {
     setMessage("")
   }
   
-  if (!register) {
+  if (!registration) {
     return (
       <section className="register">
         <div className="register__nav">

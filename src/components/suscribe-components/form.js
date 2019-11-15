@@ -1,4 +1,5 @@
 import React, { useState } from "react"
+import "../ComponentButtons/buttons.scss"
 import "./form.scss"
 
 const Form = ({ handleService, handleMessages, messageText}) => {
@@ -33,7 +34,7 @@ const Form = ({ handleService, handleMessages, messageText}) => {
           <input
             type="text"
             value={formFields.firstName}
-            onChange={(event) => handleFormFields(event)}
+            onChange={handleFormFields}
             name="firstName"
             id="formFirstName"
           />
@@ -43,7 +44,7 @@ const Form = ({ handleService, handleMessages, messageText}) => {
           <input
             type="text"
             value={formFields.lastName}
-            onChange={(event) => handleFormFields(event)}
+            onChange={handleFormFields}
             name="lastName"
             id="formLastName"
           />
@@ -53,7 +54,7 @@ const Form = ({ handleService, handleMessages, messageText}) => {
           <input
             type="tel"
             value={formFields.phone}
-            onChange={(event) => handleFormFields(event)}
+            onChange={handleFormFields}
             name="phone"
             id="formPhone"
           />
@@ -66,7 +67,7 @@ const Form = ({ handleService, handleMessages, messageText}) => {
           <input
             type="email"
             value={formFields.email}
-            onChange={(event) => handleFormFields(event)}
+            onChange={handleFormFields}
             name="email"
             id="formEmail"
             onBlur={() => handleMessages()}
@@ -74,7 +75,7 @@ const Form = ({ handleService, handleMessages, messageText}) => {
             required
           />
         </div>
-        {messageText !== "" ? <p className="form__message form__error">{messageText}</p> : ""}
+        {messageText !== "" && <p className="form__message form__error">{messageText}</p>}
         <button
           className="btn btn--primary form__btn"
           type="submit"
@@ -82,7 +83,7 @@ const Form = ({ handleService, handleMessages, messageText}) => {
           Suscribirse
         </button>
       </form>
-      <p className="text--helpers">Está es la versión beta de Átana</p>
+      <p className="text--helpers">Esta es la versión beta de Átana</p>
     </div>
   )
 }

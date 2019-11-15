@@ -15,13 +15,12 @@ function Button({
   const mainClassNames = classNames(`btn btn--primary ${customStyle}`)
   const secondaryClassNames = classNames(`btn btn--secondary ${customStyle}`)
   const btnStyle = button === "primary" ? mainClassNames : secondaryClassNames
-  console.log("Default Value: ", buttonValue);
   return (
     <button
       className={btnStyle}
       type={type}
       onClick={action}
-      {...buttonValue !== "" ? value={buttonValue} : ""}
+      value={buttonValue}
       name={buttonLabel}
     >{children}</button>
   )
