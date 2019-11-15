@@ -1,9 +1,9 @@
 import React, { Component } from "react"
 import { Link } from "gatsby"
-import Form from '../components/login/login';
+import Login from '../components/login/login';
 import "../styles/iniciarSesion.scss";
 
-class Login extends Component {
+class LoginPage extends Component {
   render() {
     return (
       <React.Fragment>
@@ -13,11 +13,11 @@ class Login extends Component {
           </Link>
           <img src="../slim-right-corner.svg" className="head__wave" alt="" aria-hidden="true"></img>
         </div>
-        <Form />
+        <Login />
       </React.Fragment>
     )
 
   }
 }
 
-export default Login
+export default LoginPage

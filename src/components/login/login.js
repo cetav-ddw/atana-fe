@@ -1,9 +1,11 @@
 import React, { Component } from "react"
-import Button from "../ComponentButtons/buttons"
-import "./login.scss"
 import { Link } from "gatsby";
+import Button from "../ComponentButtons/buttons"
+import FormLogin from "../form-login/formLogin"
+import "./login.scss"
 
-class Form extends Component {
+
+class Login extends Component {
   constructor() {
     super()
     this.state = {
@@ -65,30 +67,26 @@ class Form extends Component {
             onSubmit={this.handleSubmit}
             className="form"
           >
-            <div className="form__field">
-              <label htmlFor="formEmail">Correo electrónico</label>
-              <input
-                type="email"
-                name="email"
-                value={this.state.formEmail}
-                onChange={this.handleInput}
-                id="formEmail"
-                className="form__input"
-              />
-              <img src="../user-icon.svg" className="form__input-icon" alt="" aria-hidden="true"/>
-            </div>
-            <div className="form__field">
-              <label htmlFor="formPassword">Contraseña</label>
-              <input
-                type="password"
-                name="firstname"
-                value={this.state.formPassword}
-                onChange={this.handleInput}
-                id="formPassword"
-                className="form__input"
-              />
-              <img src="../password-icon.svg" className="form__input-icon" alt="" aria-hidden="true"/>
-            </div>
+            <FormLogin
+              formType="formEmail"
+              fieldName="Correo electrónico"
+              idName="formEmail"
+              type="email"
+              name="email"
+              value={this.state.formEmail}
+              change={this.handleInput}
+              inputIcon="../user-icon.svg"
+            />
+            <FormLogin
+              formType="formPassword"
+              fieldName="Contraseña"
+              idName="formPassword"
+              type="password"
+              name="password"
+              value={this.state.formPassword}
+              change={this.handleInput}
+              inputIcon="../password-icon.svg"
+            />
             <p className="form__message">{this.state.message}</p>
             <Button
               children="Inciar sesión"
@@ -108,7 +106,7 @@ class Form extends Component {
       )
     } else {
       return (
-        <div className="section__wrapper">
+        <div className="login">
           <p>Vista en construcción</p>
         </div>
       )
@@ -125,4 +123,4 @@ class Form extends Component {
   }
 }
 
-export default Form
+export default Login
