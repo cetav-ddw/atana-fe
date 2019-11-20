@@ -10,7 +10,7 @@ export default () => {
     {
       title: "Creación y corrección de estilos",
       paragraph:
-        "De manera ágil revisamos sus comunicaciones para la prensa y recomendamos mejoras previo al envío",
+        "De manera ágil revisamos sus comunicaciones para la prensa y recomendamos mejoras previo al envío.",
       id: "comunicado",
       link: "Crea un comunicado >",
       src: "comunicado.svg",

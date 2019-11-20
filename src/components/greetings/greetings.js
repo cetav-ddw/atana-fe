@@ -7,7 +7,7 @@ export default () => {
       <div className="greetings__avatar" />
       <div className="greetings__text">
         <p>Hola, Soy Sergio</p>
-        <p>Comuniquese con nosotros al correo example.atana@gmail.com.</p>
+        <p>Comunícate con nosotros al correo spacheco@plugin.cr</p>
       </div>
     </div>
   )

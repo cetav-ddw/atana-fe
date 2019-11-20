@@ -57,17 +57,17 @@ export default () => {
   return () => (
     <div className="container">
       <div id="text" className="container__svg">
-        <p className="svg__paragraph">Podés crear un comunicado de prensa.</p>
+        <p className="svg__paragraph">Podés crear un comunicado de prensa</p>
       </div>
       <div id="paperplane" className="container__svg">
-        <p className="svg__paragraph">Le daremos seguimieto.</p>
+        <p className="svg__paragraph">Le daremos seguimiento</p>
       </div>
       <div id="messages" className="container__svg">
         <p className="svg__paragraph">Se distribuirá automáticamente ...</p>
       </div>
       <div id="stats" className="container__svg">
         <p className="svg__paragraph">
-          ... a todos los medios y periodistas categorizados
+          ... a todos los medios y periodistas categorizados.
         </p>
       </div>
     </div>

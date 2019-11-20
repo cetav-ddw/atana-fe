@@ -15,9 +15,11 @@
 
 .container__animation {
   margin: 0 auto;
+  transform: scale(0.7);
 
   @media screen and (min-width: $medium) {
     margin: none;
+    transform: scale(1);
   }
 }
 
