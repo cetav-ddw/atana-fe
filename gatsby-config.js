@@ -28,5 +28,6 @@ module.exports = {
         icon: `src/images/atana-logo.png`,
       },
     },
+    `gatsby-plugin-netlify-cms`
   ],
 }
