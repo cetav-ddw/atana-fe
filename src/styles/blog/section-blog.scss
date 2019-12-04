@@ -1,3 +1,5 @@
+@import "../../styles/variables.scss";
+
 .nav__bar {
   align-items: center;
   background: linear-gradient(90deg, #8B1C63 0%, #BD385B 97.4%);
@@ -38,5 +40,5 @@
 }
 
 .menu {
-  background: linear-gradient(90deg, #8B1C63 0%, #BD385B 97.4%);
+  background: linear-gradient(90deg, $lightPurple, $pink);
 }

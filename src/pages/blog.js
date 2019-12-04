@@ -20,15 +20,13 @@ class BlogIndex extends React.Component {
             <Menu />
           </div>
           <div className="section__wrapper">
-            <h2 className="blog__title">
-              Átana blog
-            </h2>
+            <h2 className="blog__title">Átana blog</h2>
             <div key={node.fields.slug} className="post__wrapper">
               <Link to={node.fields.slug} className="post">
-                <h4 className="post__title">
-                  {title}
-                </h4>
-                <small className="post__date post__preview">{node.frontmatter.date}</small>
+                <h4 className="post__title">{title}</h4>
+                <small className="post__date post__preview">
+                  {node.frontmatter.date}
+                </small>
                 <p
                   dangerouslySetInnerHTML={{
                     __html: node.frontmatter.description || node.excerpt,

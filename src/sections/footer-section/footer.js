@@ -9,7 +9,7 @@ const HomeFooter = () => {
       <div className="section__wrapper">
         <Greetings />
       </div>
-    <Footer />
+      <Footer />
     </section>
   )
 }
