@@ -8,14 +8,14 @@ import Footer from "../sections/footer-section/footer"
 import "../styles/global.scss"
 
 const IndexPage = () => (
-  <>
+  <React.Fragment>
     <SEO title="Home" />
     <Header />
     <ContainerHWW />
     <OurPackages />
     <OurMission />
     <Footer />
-  </>
+  </React.Fragment>
 )
 
 export default IndexPage

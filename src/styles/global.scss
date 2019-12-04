@@ -5,7 +5,11 @@
 .section__wrapper {
   margin: 0 auto;
   max-width: $layoutSize;
-  padding: 0 30px;
+  padding: 25px;
+
+  @media screen and (min-width: 768px) {
+    padding: 10px;
+  }
 }
 
 body {
@@ -62,10 +66,4 @@ h4 {
   @media (min-width: $large) {
     font-size: 25px;
   }
-}
-
-.section__wrapper {
-  margin: 0 auto;
-  max-width: $layoutSize;
-  padding: 0 30px;
 }
