@@ -39,11 +39,11 @@ export default () => {
   ];
 
   return (
-    <>
+    <section className="section__wrapper">
       <h2 className="wrapper__title">¿Cómo trabajamos?</h2>
       {cards.map((card, i) => (
         <InfoCard key={i} {...card} />
       ))}
-    </>
+    </section>
   );
 };
