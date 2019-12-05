@@ -1,0 +1,18 @@
+@import "../../../styles/variables.scss";
+
+.section__title {
+  padding: 100px 0;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.section__bundler {
+  display: flex;
+  flex-direction: row;
+  padding: 0 0 200px;
+
+  @media screen and (max-width: 900px) {
+    align-items: center;
+    flex-direction: column;
+  }
+}

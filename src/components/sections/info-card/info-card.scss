@@ -1,0 +1,75 @@
+@import "../../../styles/variables.scss";
+
+.container__card {
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: space-between;
+  padding: 90px 0;
+  
+  @media screen and (min-width: $medium) {
+    align-items: center;
+    flex-direction: row;
+    padding: 60px 0;
+  }
+}
+
+.container__animation {
+  margin: 0 auto;
+  transform: scale(0.7);
+
+  @media screen and (min-width: $medium) {
+    margin: none;
+    transform: scale(1);
+  }
+}
+
+.container__info {
+  display: flex;
+  flex-direction: column;
+  height: 326px;
+  justify-content: center;
+  margin: 0 auto;
+  text-align: center;
+  width: 281px;
+
+  @media screen and (min-width: $medium) {
+    text-align: left;
+  }
+
+  @media screen and (min-width: $large) {
+    height: 334px;
+    width: 580px;
+  }
+}
+
+.container--reverse {
+  flex-direction: column-reverse;
+
+  @media screen and (min-width: $medium) {
+    flex-direction: row-reverse;
+  }
+}
+
+.info__paragraph {
+  font-size: 12px;
+  padding-bottom: 15px;
+
+  @media screen and (min-width: $large) {
+    font-size: 20px;
+  }
+}
+
+.info__tile {
+  padding-bottom: 50px;
+  width: 100%;
+}
+
+.info__link {
+  color: $pink;
+  font-size: 12px;
+  text-decoration: underline;
+
+  @media screen and (min-width: $medium) {
+    font-size: 18px;
+  }
+}
