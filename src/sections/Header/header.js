@@ -10,9 +10,6 @@ const Header = () => {
   return (
     <div className="header">
       <div className="section__wrapper">
-        <Link to="">
-          <img src="atana-logo.svg" alt="átana" className="header__logo" />
-        </Link>
         <Menu />
         <h1 className="header__title">
           <span className="header__title-span">crea y distribuye</span>{" "}
