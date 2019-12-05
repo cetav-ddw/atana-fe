@@ -1,11 +1,11 @@
-import React from "react"
-import { graphql } from "gatsby"
+import React from 'react';
+import { graphql } from 'gatsby';
 
 class BlogPostTemplate extends React.Component {
   render() {
-    const post = this.props.data.markdownRemark
-    const siteTitle = this.props.data.site.siteMetadata.title
-    const { previous, next } = this.props.pageContext
+    const post = this.props.data.markdownRemark;
+    const siteTitle = this.props.data.site.siteMetadata.title;
+    const { previous, next } = this.props.pageContext;
 
     return (
       <div>
@@ -13,11 +13,11 @@ class BlogPostTemplate extends React.Component {
         <p>{post.frontmatter.date}</p>
         <p dangerouslySetInnerHTML={{ __html: post.html }} />
       </div>
-    )
+    );
   }
 }
 
-export default BlogPostTemplate
+export default BlogPostTemplate;
 
 export const pageQuery = graphql`
   query BlogPostBySlug($slug: String!) {
@@ -37,4 +37,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;

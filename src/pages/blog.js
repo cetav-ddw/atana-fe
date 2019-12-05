@@ -1,21 +1,24 @@
-import React from "react"
-import { Link, graphql } from "gatsby"
-import SEO from "../components/seo"
-import Menu from "../components/nav-menu/nav-menu"
-import Footer from "../components/footer/footer"
-import "../styles/blog/section-blog.scss"
+import React from 'react';
+import { Link, graphql } from 'gatsby';
+import SEO from '../components/seo';
+import Menu from '../components/sections/nav-menu';
+import FooterContact from '../components/sections/footer-contact';
 
-class BlogIndex extends React.Component {
+import '../styles/blog.scss';
+
+class BlogPage extends React.Component {
   render() {
-    const { data } = this.props
-    const posts = data.allMarkdownRemark.edges
+    const { data } = this.props;
+    const posts = data.allMarkdownRemark.edges;
 
     return posts.map(({ node }) => {
-      const title = node.frontmatter.title || node.fields.slug
+      // ToDo porque el OR? el slug es algo como mi-post, como eso
+      // va a ser el title?
+      const title = node.frontmatter.title || node.fields.slug;
 
       return (
-        <React.Fragment>
-          <SEO title="Home" />
+        <>
+          <SEO title="Blog" />
           <div className="menu">
             <Menu />
           </div>
@@ -36,14 +39,14 @@ class BlogIndex extends React.Component {
               </Link>
             </div>
           </div>
-          <Footer />
-        </React.Fragment>
-      )
-    })
+          <FooterContact />
+        </>
+      );
+    });
   }
 }
 
-export default BlogIndex
+export default BlogPage;
 
 export const pageQuery = graphql`
   query {
@@ -68,4 +71,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;
