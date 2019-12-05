@@ -1,21 +1,22 @@
-import React from "react"
-import SEO from "../components/seo"
-import ContainerHWW from "../sections/how-we-work/how-we-work"
-import OurPackages from "../sections/our-packages/our-packages"
-import Header from "../sections/Header/header"
-import OurMission from "../sections/our-mission/our-mission"
-import Footer from "../sections/footer-section/footer"
-import "../styles/global.scss"
+import React from 'react';
+import SEO from '../components/seo';
+import HowWeWork from '../components/sections/how-we-work';
+import OurPackages from '../components/sections/our-packages';
+import Header from '../components/sections/header';
+import OurMission from '../components/sections/our-mission';
+import Footer from '../components/sections/footer';
+
+import '../styles/global.scss';
 
 const IndexPage = () => (
   <>
-    <SEO title="Home" />
+    <SEO title="Crea y distribuye comunicados de prensa" />
     <Header />
-    <ContainerHWW />
+    <HowWeWork />
     <OurPackages />
     <OurMission />
     <Footer />
   </>
-)
+);
 
-export default IndexPage
+export default IndexPage;

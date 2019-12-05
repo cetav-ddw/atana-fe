@@ -1,0 +1,74 @@
+@import '../../../styles/variables.scss';
+
+.contact {
+  background-color: $black;
+  color: $white;
+}
+
+.contact__social {
+  display: flex;
+  flex-direction: column;
+  justify-content: unset;
+  align-items: center;
+
+  @media screen and (min-width: 400px) {
+    align-items: flex-end;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 100px auto 0 auto;
+    max-width: 960px;
+    padding: 0 30px;
+  }
+}
+
+.footer__gradient {
+  background-image: url("../../../images/svg/footer-gradient.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 200px;
+  padding: 60px 0;
+  position: relative;
+  width: 100%;
+}
+
+.footer__logo {
+  height: 99px;
+  width: 165px;
+}
+
+.social__container {
+  color: white;
+  text-align: center;
+  width: 50%;
+  
+  @media screen and (min-width: 400px) {
+    width: 50%;
+  }
+
+  @media screen and (min-width: 700px) {
+    width: 33%;
+  }
+}
+
+.social {
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-size: contain;
+  border: none;
+  cursor: pointer;
+  display: inline-block;
+  margin: 8px 8px 0 0;
+  padding: 15px;
+}
+
+.social--facebook {
+  background-image: url("../../../images/facebook.png");
+}
+
+.social--instagram {
+  background-image: url("../../../images/instagram.png");
+}
+
+.social--whatsapp {
+  background-image: url("../../../images/whatsapp.png");
+}
