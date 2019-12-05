@@ -24,7 +24,7 @@ function SEO({ description, lang, meta, title }) {
       }
     `
   );
-
+  // ToDo actualizar data para Ataba
   const metaDescription = description || site.siteMetadata.description;
 
   return (
