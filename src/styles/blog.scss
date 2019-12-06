@@ -1,8 +1,8 @@
-@import "variables.scss";
+@import "./variables.scss";
 
 .nav__bar {
   align-items: center;
-  background: linear-gradient(90deg, #8B1C63 0%, #BD385B 97.4%);
+  background: linear-gradient(90deg, $lightPurple, $pink);
   display: flex;
   flex-direction: row;
   justify-content: space-between;

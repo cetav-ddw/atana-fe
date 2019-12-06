@@ -1,5 +1,9 @@
 import React from 'react';
 import { graphql } from 'gatsby';
+import SEO from '../components/seo';
+import Menu from '../components/sections/nav-menu';
+import FooterContact from '../components/sections/footer-contact';
+import '../styles/blog.scss';
 
 class BlogPostTemplate extends React.Component {
   render() {
@@ -8,11 +12,20 @@ class BlogPostTemplate extends React.Component {
     const { previous, next } = this.props.pageContext;
 
     return (
-      <div>
-        <h1>{post.frontmatter.title}</h1>
-        <p>{post.frontmatter.date}</p>
-        <p dangerouslySetInnerHTML={{ __html: post.html }} />
-      </div>
+      <React.Fragment>
+        <SEO title={post.frontmatter.title} />
+        <div className="menu">
+          <Menu />
+        </div>
+        <div className="section__wrapper">
+          <div className="post__wrapper">
+            <h1 className="post__title">{post.frontmatter.title}</h1>
+            <p className="post__date post__preview">{post.frontmatter.date}</p>
+            <p dangerouslySetInnerHTML={{ __html: post.html }} />
+          </div>
+        </div>
+        <FooterContact />
+      </React.Fragment>
     );
   }
 }
