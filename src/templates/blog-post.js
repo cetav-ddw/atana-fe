@@ -13,7 +13,7 @@ class BlogPostTemplate extends React.Component {
 
     return (
       <React.Fragment>
-        <SEO title="Home" />
+        <SEO title={post.frontmatter.title} />
         <div className="menu">
           <Menu />
         </div>
