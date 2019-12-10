@@ -3,51 +3,49 @@ import { Link, graphql, StaticQuery } from 'gatsby';
 import SEO from '../components/seo';
 import Menu from '../components/sections/nav-menu';
 import FooterContact from '../components/sections/footer-contact';
+
 import '../styles/blog.scss';
 
-const BlogIndex = () => (
+const Blog = () => (
   <StaticQuery
-    query={graphql`
-      query {
-        site {
-          siteMetadata {
-            title
-          }
-        }
-        allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+    query={
+      graphql` {
+        allFile(filter: {sourceInstanceName: {eq: "blog"}}) {
           edges {
             node {
-              excerpt
-              fields {
-                slug
-              }
-              frontmatter {
-                date(formatString: "MMMM DD, YYYY")
-                title
-                description
+              childMarkdownRemark {
+                frontmatter {
+                  title
+                  date(formatString: "MMMM DD, YYYY")
+                  description
+                  postImage
+                }
+                fields {
+                  slug
+                }
               }
             }
           }
         }
       }
     `}
+    
     render={data => {
-      const posts = data.allMarkdownRemark.edges;
-
-      const post = posts.map(({ node }) => {
+      const post = data.allFile.edges.map(({ node }) => {
         const title = node.frontmatter.title;
         const path = node.fields.slug.replace(/\/$/gm, '');
         return (
           <div className="section__wrapper">
             <div key={node.fields.slug} className="post__wrapper">
               <Link to={path} className="post">
+                {node.frontmatter.postImage ? <img src={node.frontmatter.postImage} alt={`Imagen del post con el titulo, ${node.frontmatter.title}`}/> : ""}
                 <h4 className="post__title">{title}</h4>
                 <small className="post__date post__preview">
                   {node.frontmatter.date}
                 </small>
                 <p
                   dangerouslySetInnerHTML={{
-                    __html: node.frontmatter.description || node.excerpt,
+                    __html: node.frontmatter.description
                   }}
                   className="post__preview"
                 />
@@ -73,4 +71,4 @@ const BlogIndex = () => (
   ></StaticQuery>
 );
 
-export default BlogIndex;
+export default Blog;
