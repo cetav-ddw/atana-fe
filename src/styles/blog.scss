@@ -20,7 +20,12 @@
   font-size: 14px;
 }
 
+.post__image {
+  width: 300px;
+}
+
 .post__title {
+  color: $black;
   font-size: 24px;
   font-weight: 600;
   letter-spacing: 0.08px;
