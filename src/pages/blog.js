@@ -32,33 +32,33 @@ const Blog = () => {
       `}
 
       render= {(data) => {
-        console.log("Some", data)
-        const post = data.allFile.edges.map(({node}) => {
+        console.log(data)
+        const postsList = data.allFile.edges.map(({node}) => {
           const {fields, frontmatter} = node.childMarkdownRemark;
           const title = frontmatter.title;
           const path = fields.slug.replace(/\/$/gm, '');
           return (
-            <div className="section__wrapper" key={1}>
+            <div className="section__wrapper" key={path}>
               <div className="post__wrapper">
-                <Link to={path} className="post">
-                  {frontmatter.postImage ? <img src={frontmatter.postImage} className="post__image" alt={`Imagen del post con el titulo, ${frontmatter.title}`}/> : ""}
+                <Link to={path} className="post__link">
                   <h4 className="post__title">{title}</h4>
-                  <small className="post__date post__preview">
-                    {frontmatter.date}
-                  </small>
-                  <p
-                    dangerouslySetInnerHTML={{
-                      __html: frontmatter.description
-                    }}
-                    className="post__preview"
-                  />
                 </Link>
+                {frontmatter.postImage !== "" && <img src={frontmatter.postImage} className="post__image" alt=""/>}
+                <small className="post__date post__preview">
+                  {frontmatter.date}
+                </small>
+                <p
+                  dangerouslySetInnerHTML={{
+                    __html: frontmatter.description
+                  }}
+                  className="post__preview"
+                />
               </div>
             </div>
           );
         });
         return (
-          <React.Fragment>
+          <>
             <SEO title="Blog" />
             <div className="menu">
               <Menu />
@@ -66,9 +66,9 @@ const Blog = () => {
             <div className="section__wrapper">
               <h2 className="blog__title">Átana blog</h2>
             </div>
-            {post}
+            {postsList}
             <FooterContact />
-          </React.Fragment>
+          </>
         )
       }}
     ></StaticQuery>

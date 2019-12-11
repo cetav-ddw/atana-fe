@@ -12,16 +12,17 @@
   width: 105px;
 }
 
-.post {
-  text-decoration: none;
-}
-
 .post__date {
   font-size: 14px;
 }
 
+
+.post__link {
+  text-decoration: none;
+}
+
 .post__image {
-  width: 300px;
+  max-width: 275px;
 }
 
 .post__title {
