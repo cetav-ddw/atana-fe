@@ -10,4 +10,3 @@ thirdFeature:
   thirdFeatureDescription: Hacemos un reporte de análisis de desempeño del comunicado enviado.
   thirdFeatureTitle: Seguimiento
 ---
-

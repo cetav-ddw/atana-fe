@@ -7,6 +7,7 @@ description: >-
 postImage: /img/firstpost.jpg
 author: Felipe-CETAV
 ---
+
 ## ¿Qué es un comunicado de prensa?
 
 Un comunicado de prensa (también conocido como "comunicado de prensa" o "comunicado de prensa") es un contenido diseñado para informar a los miembros de los medios sobre los desarrollos recientes de una organización. Dicho de otra manera: Un comunicado de prensa es algo que una empresa escribe para que la gente sepa sobre cosas nuevas.

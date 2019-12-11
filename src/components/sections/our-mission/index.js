@@ -1,17 +1,22 @@
 import React, { useEffect } from 'react';
-import { StaticQuery, graphql } from "gatsby"
+import { StaticQuery, graphql } from 'gatsby';
 import ourMissionCanvas from '../../../utils/our-mission-canvas';
 
 import './our-mission.scss';
 
 const OurMission = () => {
-  useEffect(ourMissionCanvas)
+  useEffect(ourMissionCanvas);
 
   return (
     <StaticQuery
-      query= {
-        graphql` {
-          allFile(filter: {sourceInstanceName: {eq: "landing"}, name: {eq: "footer"}}) {
+      query={graphql`
+        {
+          allFile(
+            filter: {
+              sourceInstanceName: { eq: "landing" }
+              name: { eq: "footer" }
+            }
+          ) {
             edges {
               node {
                 childMarkdownRemark {
@@ -31,10 +36,11 @@ const OurMission = () => {
           }
         }
       `}
+      render={data => {
+        const { topSection, bottomSection } = data.allFile.edges[
+          '0'
+        ].node.childMarkdownRemark.frontmatter;
 
-      render= {(data) => {
-        const { topSection, bottomSection } = data.allFile.edges["0"].node.childMarkdownRemark.frontmatter;
-        
         return (
           <section className="our-mission">
             <canvas className="our-mission__canvas"></canvas>
@@ -73,10 +79,10 @@ const OurMission = () => {
               </div>
             </div>
           </section>
-        )
+        );
       }}
     ></StaticQuery>
-  )
-}
+  );
+};
 
-export default OurMission
+export default OurMission;

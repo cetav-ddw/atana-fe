@@ -1,14 +1,19 @@
 import React from 'react';
-import { StaticQuery, graphql } from "gatsby"
+import { StaticQuery, graphql } from 'gatsby';
 
 import './greetings.scss';
 
 const Greetings = () => {
   return (
     <StaticQuery
-      query= {
-        graphql` {
-          allFile(filter: {sourceInstanceName: {eq: "landing"}, name: {eq: "greetings"}}) {
+      query={graphql`
+        {
+          allFile(
+            filter: {
+              sourceInstanceName: { eq: "landing" }
+              name: { eq: "greetings" }
+            }
+          ) {
             edges {
               node {
                 childMarkdownRemark {
@@ -22,9 +27,10 @@ const Greetings = () => {
           }
         }
       `}
-
-      render= {(data) => {
-        const { sectionGreetings, sectionMessage } = data.allFile.edges["0"].node.childMarkdownRemark.frontmatter;
+      render={data => {
+        const { sectionGreetings, sectionMessage } = data.allFile.edges[
+          '0'
+        ].node.childMarkdownRemark.frontmatter;
         return (
           <div className="contact__greetings">
             <div className="greetings__avatar" />
@@ -33,10 +39,10 @@ const Greetings = () => {
               <p>{sectionMessage}</p>
             </div>
           </div>
-        )
+        );
       }}
     ></StaticQuery>
-  )
+  );
 };
 
-export default Greetings
+export default Greetings;

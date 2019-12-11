@@ -8,4 +8,3 @@ bottomSection:
     centroamericano, al enlazar empresas y medios de comunicación.
   bottomSectionTitle: Nuestra visión
 ---
-

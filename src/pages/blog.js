@@ -9,9 +9,9 @@ import '../styles/blog.scss';
 const Blog = () => {
   return (
     <StaticQuery
-      query={
-        graphql` {
-          allFile(filter: {sourceInstanceName: {eq: "posts"}}) {
+      query={graphql`
+        {
+          allFile(filter: { sourceInstanceName: { eq: "posts" } }) {
             edges {
               node {
                 childMarkdownRemark {
@@ -30,11 +30,10 @@ const Blog = () => {
           }
         }
       `}
-
-      render= {(data) => {
-        console.log(data)
-        const postsList = data.allFile.edges.map(({node}) => {
-          const {fields, frontmatter} = node.childMarkdownRemark;
+      render={data => {
+        console.log(data);
+        const postsList = data.allFile.edges.map(({ node }) => {
+          const { fields, frontmatter } = node.childMarkdownRemark;
           const title = frontmatter.title;
           const path = fields.slug.replace(/\/$/gm, '');
           return (
@@ -43,13 +42,19 @@ const Blog = () => {
                 <Link to={path} className="post__link">
                   <h4 className="post__title">{title}</h4>
                 </Link>
-                {frontmatter.postImage !== "" && <img src={frontmatter.postImage} className="post__image" alt=""/>}
+                {frontmatter.postImage !== '' && (
+                  <img
+                    src={frontmatter.postImage}
+                    className="post__image"
+                    alt=""
+                  />
+                )}
                 <small className="post__date post__preview">
                   {frontmatter.date}
                 </small>
                 <p
                   dangerouslySetInnerHTML={{
-                    __html: frontmatter.description
+                    __html: frontmatter.description,
                   }}
                   className="post__preview"
                 />
@@ -69,10 +74,10 @@ const Blog = () => {
             {postsList}
             <FooterContact />
           </>
-        )
+        );
       }}
     ></StaticQuery>
-  )
-}
+  );
+};
 
 export default Blog;
