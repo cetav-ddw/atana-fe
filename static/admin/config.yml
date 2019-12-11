@@ -10,7 +10,7 @@ media_folder: static/img
 public_folder: /img
 
 collections:
-  - label: "Blog"
+  - label: "Blog Contenido"
     name: "blog"
     folder: "content/posts"
     create: true
@@ -33,7 +33,7 @@ collections:
     name: "landing"
     identifier_field: "landing"
     files:
-      - label: "Head"
+      - label: "Sección Head del sitio"
         name: "head"
         identifier_field: "head"
         file: "content/landing/head.md"
