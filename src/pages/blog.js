@@ -31,7 +31,6 @@ const Blog = () => {
         }
       `}
       render={data => {
-        console.log(data);
         const postsList = data.allFile.edges.map(({ node }) => {
           const { fields, frontmatter } = node.childMarkdownRemark;
           const title = frontmatter.title;
@@ -42,12 +41,22 @@ const Blog = () => {
                 <Link to={path} className="post__link">
                   <h4 className="post__title">{title}</h4>
                 </Link>
-                {frontmatter.postImage !== '' && (
-                  <img
-                    src={frontmatter.postImage}
-                    className="post__image"
-                    alt=""
-                  />
+                {frontmatter.postImage ? (
+                  <div className="post__frame">
+                    <img
+                      src={frontmatter.postImage}
+                      className="post__image"
+                      alt=""
+                    />
+                  </div>
+                ) : (
+                  <div className="post__frame">
+                    <img
+                      src="../defaultpost.svg"
+                      className="post__image"
+                      alt=""
+                    />
+                  </div>
                 )}
                 <small className="post__date post__preview">
                   {frontmatter.date}

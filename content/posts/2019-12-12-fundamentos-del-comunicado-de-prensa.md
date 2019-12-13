@@ -1,11 +1,11 @@
 ---
 title: Fundamentos del comunicado de prensa
-date: 2019-12-11T15:44:56.833Z
+date: 2019-12-12T18:11:59.798Z
 description: >-
   Un comunicado de prensa es un contenido diseñado para informar a los miembros
   de los medios sobre los desarrollos recientes de una organización.
 postImage: /img/firstpost.jpg
-author: Felipe-CETAV
+author: Sergio Pacheco
 ---
 
 ## ¿Qué es un comunicado de prensa?

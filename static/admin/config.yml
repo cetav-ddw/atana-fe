@@ -18,94 +18,95 @@ collections:
     editor:
       preview: false
     fields:
-      - { label: "Titulo del post", name: "title", widget: "string" }
-      - { label: "Fecha de publicación", name: "date", widget: "datetime" }
-      - { label: "Descripción del post", name: "description", widget: "string" }
-      - label: "Imagen del post"
-        name: "postImage"
-        widget: "image"
-        media_library:
-          config:
-            multiple: false
-      - { label: "Contenido del post", name: "body", widget: "markdown" }
-      - { label: "Autor del post", name: "author", widget: "string" }
+    - { label: "Titulo del post", name: "title", widget: "string" }
+    - { label: "Fecha de publicación", name: "date", widget: "datetime" }
+    - { label: "Descripción del post", name: "description", widget: "string" }
+    - label: "Imagen del post"
+      name: "postImage"
+      required: false
+      widget: "image"
+      media_library:
+        config:
+          multiple: false
+    - { label: "Contenido del post", name: "body", widget: "markdown" }
+    - { label: "Autor del post", name: "author", widget: "string" }
   - label: "Landing Contenido"
     name: "landing"
     identifier_field: "landing"
     files:
-      - label: "Sección Head del sitio"
-        name: "head"
-        identifier_field: "head"
-        file: "content/landing/head.md"
+    - label: "Sección Head del sitio"
+      name: "head"
+      identifier_field: "head"
+      file: "content/landing/head.md"
+      fields:
+      - { label: "Frase de introducción en header", name: "intro", widget: "string"}
+      - { label: "Frase en medio del header", name: "mid", widget: "string"}
+      - { label: "Frase final en header", name: "outro", widget: "string"}
+    - label: "Sección como trabajamos"
+      name: "howWeWork"
+      identifier_field: "howWeWork"
+      file: "content/landing/howWeWork.md"
+      fields:
+      - { label: "Titulo de la sección", name: "sectionTitle", widget: "string"}
+      - {
+        label: "Contenido del primer Feature",
+        name: "firstFeature",
+        widget: "object",
         fields:
-          - { label: "Frase de introducción en header", name: "intro", widget: "string"}
-          - { label: "Frase en medio del header", name: "mid", widget: "string"}
-          - { label: "Frase final en header", name: "outro", widget: "string"}
-      - label: "Sección como trabajamos"
-        name: "howWeWork"
-        identifier_field: "howWeWork"
-        file: "content/landing/howWeWork.md"
+          [
+          { label: "Titulo del Feature", name: "firstFeatureTitle", widget: "string"},
+          { label: "Descripción del Feature", name: "firstFeatureDescription", widget: "string"}
+          ]
+        }
+      - {
+        label: "Contenido del segundo Feature",
+        name: "secondFeature",
+        widget: "object",
         fields:
-          - { label: "Titulo de la sección", name: "sectionTitle", widget: "string"}
-          - {
-              label: "Contenido del primer Feature",
-              name: "firstFeature",
-              widget: "object",
-              fields:
-                [
-                  { label: "Titulo del Feature", name: "firstFeatureTitle", widget: "string"},
-                  { label: "Descripción del Feature", name: "firstFeatureDescription", widget: "string"}
-                ]
-            }
-          - {
-              label: "Contenido del segundo Feature",
-              name: "secondFeature",
-              widget: "object",
-              fields:
-                [
-                  { label: "Titulo del Feature", name: "secondFeatureTitle", widget: "string"},
-                  { label: "Descripción del Feature", name: "secondFeatureDescription", widget: "string"}
-                ]
-            }
-          - {
-              label: "Contenido del tercer Feature",
-              name: "thirdFeature",
-              widget: "object",
-              fields:
-                [
-                  { label: "Titulo del Feature", name: "thirdFeatureTitle", widget: "string"},
-                  { label: "Descripción del Feature", name: "thirdFeatureDescription", widget: "string"}
-                ]
-            }
-      - label: "Sección del Footer"
-        name: "footer"
-        identifier_field: "footer"
-        file: "content/landing/footer.md"
+          [
+          { label: "Titulo del Feature", name: "secondFeatureTitle", widget: "string"},
+          { label: "Descripción del Feature", name: "secondFeatureDescription", widget: "string"}
+          ]
+        }
+      - {
+        label: "Contenido del tercer Feature",
+        name: "thirdFeature",
+        widget: "object",
         fields:
-            - {
-              label: "Contenido superior de la sección",
-              name: "topSection",
-              widget: "object",
-              fields:
-                [
-                  { label: "Titulo del contenido superior", name: "topSectionTitle", widget: "string"},
-                  { label: "Frase del contenido superior", name: "topSectionSlogan", widget: "string"}
-                ]
-            }
-            - {
-              label: "Contenido inferior de la sección",
-              name: "bottomSection",
-              widget: "object",
-              fields:
-                [
-                  { label: "Titulo del contenido inferior", name: "bottomSectionTitle", widget: "string"},
-                  { label: "Frase del contenido inferior", name: "bottomSectionSlogan", widget: "string"}
-                ]
-            }
-      - label: "Sección de contacto"
-        name: "greetings"
-        identifier_field: "greetings"
-        file: "content/landing/greetings.md"
+          [
+          { label: "Titulo del Feature", name: "thirdFeatureTitle", widget: "string"},
+          { label: "Descripción del Feature", name: "thirdFeatureDescription", widget: "string"}
+          ]
+        }
+    - label: "Sección del Footer"
+      name: "footer"
+      identifier_field: "footer"
+      file: "content/landing/footer.md"
+      fields:
+      - {
+        label: "Contenido superior de la sección",
+        name: "topSection",
+        widget: "object",
         fields:
-          - { label: "Saludos", name: "sectionGreetings", widget: "string"}
-          - { label: "Mensaje y contacto", name: "sectionMessage", widget: "string"}
+          [
+          { label: "Titulo del contenido superior", name: "topSectionTitle", widget: "string"},
+          { label: "Frase del contenido superior", name: "topSectionSlogan", widget: "string"}
+          ]
+      }
+      - {
+        label: "Contenido inferior de la sección",
+        name: "bottomSection",
+        widget: "object",
+        fields:
+          [
+          { label: "Titulo del contenido inferior", name: "bottomSectionTitle", widget: "string"},
+          { label: "Frase del contenido inferior", name: "bottomSectionSlogan", widget: "string"}
+          ]
+      }
+    - label: "Sección de contacto"
+      name: "greetings"
+      identifier_field: "greetings"
+      file: "content/landing/greetings.md"
+      fields:
+      - { label: "Saludos", name: "sectionGreetings", widget: "string"}
+      - { label: "Mensaje y contacto", name: "sectionMessage", widget: "string"}

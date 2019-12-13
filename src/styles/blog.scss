@@ -16,13 +16,21 @@
   font-size: 14px;
 }
 
-
-.post__link {
-  text-decoration: none;
+.post__frame {
+  border-radius: 10px;
+  display: flex;
+  height: 228px;
+  justify-content: center;
+  overflow: hidden;
+  width: 275px;
 }
 
 .post__image {
-  max-width: 275px;
+  height: 100%;
+}
+
+.post__link {
+  text-decoration: none;
 }
 
 .post__title {
