@@ -21,6 +21,13 @@ class BlogPostTemplate extends React.Component {
           <div className="post__wrapper">
             <h1 className="post__title">{post.frontmatter.title}</h1>
             <p className="post__date post__preview">{post.frontmatter.date}</p>
+            {post.frontmatter.postImage !== '' && (
+              <img
+                src={post.frontmatter.postImage}
+                className="post__image"
+                alt=""
+              />
+            )}
             <p dangerouslySetInnerHTML={{ __html: post.html }} />
           </div>
         </div>
@@ -47,6 +54,7 @@ export const pageQuery = graphql`
         title
         date(formatString: "MMMM DD, YYYY")
         description
+        postImage
       }
     }
   }

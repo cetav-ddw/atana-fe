@@ -7,7 +7,7 @@ const Menu = () => (
   <>
     <div className="nav__menu section__wrapper">
       <Link to="">
-        <img src="atana-logo.svg" alt="átana" className="header__logo" />
+        <img src="../atana-logo.svg" alt="átana" className="header__logo" />
       </Link>
       <div>
         <Link to="" className="nav__link">

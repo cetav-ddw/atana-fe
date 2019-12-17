@@ -12,15 +12,29 @@
   width: 105px;
 }
 
-.post {
-  text-decoration: none;
-}
-
 .post__date {
   font-size: 14px;
 }
 
+.post__frame {
+  border-radius: 10px;
+  display: flex;
+  height: 228px;
+  justify-content: center;
+  overflow: hidden;
+  width: 275px;
+}
+
+.post__image {
+  height: 100%;
+}
+
+.post__link {
+  text-decoration: none;
+}
+
 .post__title {
+  color: $black;
   font-size: 24px;
   font-weight: 600;
   letter-spacing: 0.08px;
