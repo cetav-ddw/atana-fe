@@ -19,12 +19,13 @@ class BlogPostTemplate extends React.Component {
         </div>
         <div className="section__wrapper">
           <div className="post__wrapper">
-            <h1 className="post__title">{post.frontmatter.title}</h1>
-            <p className="post__date post__preview">{post.frontmatter.date}</p>
+            <h1 className="post__main__title">{post.frontmatter.title}</h1>
+            <p className="post__description post__main__description">{post.frontmatter.description}</p>
+            <p className="post__date post__main__date">{post.frontmatter.date}</p>
             {post.frontmatter.postImage !== '' && (
               <img
                 src={post.frontmatter.postImage}
-                className="post__image"
+                className="post__image post__main__image"
                 alt=""
               />
             )}
