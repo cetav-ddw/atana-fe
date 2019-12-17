@@ -3,11 +3,7 @@ title: Metodologías ágiles para la gestión de proyectos.
 date: 2019-12-12T20:14:56.088Z
 description: >-
   En la actualidad, debemos afrontar constantes cambios en el mundo de los
-  negocios y la tecnología, es por ello que la forma en la que generamos y
-  gestionamos nuevos proyectos y modelos de negocio deben ser ágiles, donde los
-  requisitos y las soluciones evolucionan para adaptarse. Sabes ¿qué son las
-  metodologías ágiles?, ¿en qué consisten y cuáles son las más utilizadas?, a
-  continuación te lo indicaremos.
+  negocios y la tecnología, es por ello que la forma en la que generamos.
 postImage: /img/agile.png
 author: Felipe-CETAV
 ---
