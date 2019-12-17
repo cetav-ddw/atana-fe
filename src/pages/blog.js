@@ -38,9 +38,6 @@ const Blog = () => {
           return (
             <div className="section__wrapper" key={path}>
               <div className="post__wrapper">
-                <Link to={path} className="post__link">
-                  <h4 className="post__title">{title}</h4>
-                </Link>
                 {frontmatter.postImage ? (
                   <div className="post__frame">
                     <img
@@ -50,23 +47,28 @@ const Blog = () => {
                     />
                   </div>
                 ) : (
-                  <div className="post__frame">
-                    <img
-                      src="../defaultpost.svg"
-                      className="post__image"
-                      alt=""
-                    />
-                  </div>
-                )}
-                <small className="post__date post__preview">
-                  {frontmatter.date}
-                </small>
-                <p
-                  dangerouslySetInnerHTML={{
-                    __html: frontmatter.description,
-                  }}
-                  className="post__preview"
-                />
+                    <div className="post__frame">
+                      <img
+                        src="../defaultpost.svg"
+                        className="post__image"
+                        alt=""
+                      />
+                    </div>
+                  )}
+                <div className="post__content">
+                  <Link to={path} className="post__link">
+                    <h4 className="post__title">{title}</h4>
+                  </Link>
+                  <small className="post__date">
+                    {frontmatter.date}
+                  </small>
+                  <p
+                    dangerouslySetInnerHTML={{
+                      __html: frontmatter.description,
+                    }}
+                    className="post__preview"
+                  />
+                </div>
               </div>
             </div>
           );
