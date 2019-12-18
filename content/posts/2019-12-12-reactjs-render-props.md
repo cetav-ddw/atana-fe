@@ -27,5 +27,4 @@ React Class components have by default an object with some properties, some of t
 React by default has a render method for every Component. The reason why I forced another Render it’s because ( State ) was not defined when the render method runs even though I used ComponentWillMount as first render function to pull and set the Data into the ( State ).
 
 
-[![como escribir un comunicado de prensa](https://i.ytimg.com/an_webp/TBBfvJBnyYA/mqdefault_6s.webp?du=3000&sqp=COD36e8F&rs=AOn4CLAz8WQchagTBc2ieCkkgm76-dJXzw)](https://youtu.be/TBBfvJBnyYA "como escribir un comunicado de prensa")
 

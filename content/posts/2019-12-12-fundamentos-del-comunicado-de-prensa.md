@@ -5,6 +5,7 @@ description: >-
   Un comunicado de prensa es un contenido diseñado para informar a los miembros
   de los medios sobre los desarrollos recientes de una organización.
 postImage: /img/firstpost.jpg
+postVideo: https://www.youtube.com/embed/TBBfvJBnyYA
 author: Sergio Pacheco
 ---
 
