@@ -18,7 +18,6 @@ class BlogPostTemplate extends React.Component {
           <Menu />
         </div>
         <div className="section__wrapper">
-          <div className="post__wrapper">
             <h1 className="post__main__title">{post.frontmatter.title}</h1>
             <p className="post__description post__main__description">{post.frontmatter.description}</p>
             <p className="post__date post__main__date">{post.frontmatter.date}</p>
@@ -29,9 +28,8 @@ class BlogPostTemplate extends React.Component {
                 alt=""
               />
             )}
-            <p dangerouslySetInnerHTML={{ __html: post.html }} />
+            <div dangerouslySetInnerHTML={{ __html: post.html }} className="post__main__content"/>
           </div>
-        </div>
         <FooterContact />
       </React.Fragment>
     );
