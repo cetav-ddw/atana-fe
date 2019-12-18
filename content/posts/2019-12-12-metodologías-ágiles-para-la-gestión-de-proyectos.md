@@ -21,3 +21,5 @@ Existen diferentes opciones ágiles entre las cuales podemos destacar las siguie
 - Software funcionando sobre documentación extensiva.
 - Colaboración con el cliente sobre negociación contractual.
 - Respuesta ante el cambio sobre seguir un plan.
+
+[![como escribir un comunicado de prensa](https://i.ytimg.com/an_webp/TBBfvJBnyYA/mqdefault_6s.webp?du=3000&sqp=COD36e8F&rs=AOn4CLAz8WQchagTBc2ieCkkgm76-dJXzw)](https://youtu.be/TBBfvJBnyYA "como escribir un comunicado de prensa")
