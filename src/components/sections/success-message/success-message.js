@@ -1,7 +1,7 @@
 import React from 'react';
-import Logo from '../../images/Logo-color.png';
+import Logo from '../../../images/Logo-color.png';
 
-import './message.scss';
+import './success-message.scss';
 
 const Message = () => {
   return (

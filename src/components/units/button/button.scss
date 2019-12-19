@@ -5,10 +5,7 @@
   border: 0;
   border-radius: 10px;
   cursor: pointer;
-  font-family: $mainFont;
-  font-style: normal;
-  font-size: 18px;
-  font-weight: 600;
+  font: normal 600 18px $mainFont;
   line-height: 30px;
   padding: 10px;
   text-align: center;

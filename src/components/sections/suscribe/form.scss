@@ -1,0 +1,84 @@
+@import "../../../styles/variables.scss";
+
+.form {
+  max-width: 500px;
+  padding: 25px 0;
+  width: 100%;
+}
+
+.form__field {
+  color: black;
+  padding: 10px 0;
+}
+
+.form__btn {
+  max-width: 500px;
+  width: 100%;
+}
+
+.form__message {
+  padding: 5px 0;
+}
+
+.form input {
+  border: 1px solid #C4C4C4;
+  box-sizing: border-box;
+  border-radius: 5px;
+  display: block;
+  font-size: 17px;
+  padding: 10px;
+  width: 100%;
+}
+
+.form__error {
+  color: $pink;
+  word-break: break-word;
+}
+
+.register__layout {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: center;
+  margin: 0 auto;
+  width: 85%;
+}
+
+.required__field {
+  color: $pink;
+  font-size: 16px;
+}
+
+.register__layout h1{
+  color: $black;
+  font-size: 39px;
+
+  @media screen and (min-width: 700px) {
+    font-size: 30px;
+  }
+}
+
+.register__layout h2{
+  color: $black;
+  font-size: 20px;
+}
+
+.register__layout a{
+  margin: 25px 0 0;
+  text-decoration: none;
+}
+
+.register__wrapper {
+  margin: 0 auto;
+  max-width: $layoutSize;
+  padding: 0;
+
+  @media screen and (min-width: 700px) {
+    padding: 0 30px;
+  }
+}
+
+.text--helpers {
+  color: #979797;
+}
