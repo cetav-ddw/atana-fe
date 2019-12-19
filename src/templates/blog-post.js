@@ -3,14 +3,15 @@ import { graphql } from 'gatsby';
 import SEO from '../components/seo';
 import Menu from '../components/sections/nav-menu';
 import FooterContact from '../components/sections/footer-contact';
+
 import '../styles/blog.scss';
 
 class BlogPostTemplate extends React.Component {
   render() {
     const post = this.props.data.markdownRemark;
+    console.log(this.props.data)
     const siteTitle = this.props.data.site.siteMetadata.title;
     const { previous, next } = this.props.pageContext;
-
     return (
       <React.Fragment>
         <SEO title={post.frontmatter.title} />
@@ -18,19 +19,26 @@ class BlogPostTemplate extends React.Component {
           <Menu />
         </div>
         <div className="section__wrapper">
-          <div className="post__wrapper">
-            <h1 className="post__main__title">{post.frontmatter.title}</h1>
-            <p className="post__description post__main__description">{post.frontmatter.description}</p>
-            <p className="post__date post__main__date">{post.frontmatter.date}</p>
-            {post.frontmatter.postImage !== '' && (
-              <img
-                src={post.frontmatter.postImage}
-                className="post__image post__main__image"
-                alt=""
-              />
-            )}
-            <p dangerouslySetInnerHTML={{ __html: post.html }} />
-          </div>
+          <h1 className="post__main-title">{post.frontmatter.title}</h1>
+          <p className="post__description post__main-description">{post.frontmatter.description}</p>
+          <p className="post__date post__main-date">{post.frontmatter.date}</p>
+          {post.frontmatter.postImage !== '' && (
+            <img
+              src={post.frontmatter.postImage}
+              className="post__image post__main-mage"
+              alt=""
+            />
+          )}
+          <div dangerouslySetInnerHTML={{ __html: post.html }} className="post__main-content" />
+          {post.frontmatter.postVideo && (
+            <div className="post__video-wrap">
+              <iframe
+              title="video"
+              src={post.frontmatter.postVideo}
+            ></iframe>
+            </div>
+          )}
+          
         </div>
         <FooterContact />
       </React.Fragment>
@@ -56,6 +64,7 @@ export const pageQuery = graphql`
         date(formatString: "MMMM DD, YYYY")
         description
         postImage
+        postVideo
       }
     }
   }

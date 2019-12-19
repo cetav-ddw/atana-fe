@@ -44,7 +44,7 @@ const Header = () => {
                 <span className="header__title-span">{intro}</span> {mid}
               </h1>
               <p className="header__text">{outro} </p>
-              <Link to="" className="header__btn btn btn--primary">
+              <Link to="/registro" className="header__btn btn btn--primary">
                 Suscribirse
               </Link>
               <div className="header__animation">

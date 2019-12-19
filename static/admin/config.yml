@@ -28,6 +28,7 @@ collections:
       media_library:
         config:
           multiple: false
+    - { label: "Agregue el link del video", name: "postVideo", widget: "string" }
     - { label: "Contenido del post", name: "body", widget: "markdown" }
     - { label: "Autor del post", name: "author", widget: "string" }
   - label: "Landing Contenido"

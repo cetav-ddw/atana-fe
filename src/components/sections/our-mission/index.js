@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { StaticQuery, graphql } from 'gatsby';
+import { Link, StaticQuery, graphql } from 'gatsby';
 import ourMissionCanvas from '../../../utils/our-mission-canvas';
 
 import './our-mission.scss';
@@ -75,7 +75,7 @@ const OurMission = () => {
               <div className="cta">
                 <div className="our-mission__svg cta__paper-plane--dark" />
                 <div className="our-mission__svg cta__paper-plane" />
-                <button className="cta__btn">Crea tu comunicado</button>
+                <Link className="cta__btn" to="/registro">Crea tu comunicado</Link>
               </div>
             </div>
           </section>
