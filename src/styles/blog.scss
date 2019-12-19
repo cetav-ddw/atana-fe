@@ -1,44 +1,125 @@
 @import "./variables.scss";
 
-.nav__bar {
-  align-items: center;
-  background: linear-gradient(90deg, $lightPurple, $pink);
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-
-.nav__logo {
-  width: 105px;
-}
-
-.post {
-  text-decoration: none;
-}
-
-.post__date {
-  font-size: 14px;
-}
-
-.post__title {
-  font-size: 24px;
-  font-weight: 600;
-  letter-spacing: 0.08px;
-}
-
-.post__preview {
-  color: #484848;
-}
-
-.post__wrapper {
-  border-bottom: 1px solid #D5D5D5;
-  padding: 50px 0 20px;
-}
-
 .blog__title {
-  padding: 70px 0 30px;
+  @media screen and (min-width: 768px) {
+    padding: 30px 0;
+  }
 }
 
 .menu {
   background: linear-gradient(90deg, $lightPurple, $pink);
+}
+
+.post__content {
+
+  @media screen and (min-width: 768px) {
+    display: inline-block;
+    margin-left: 27px;
+    vertical-align: top;
+    width: 68%;
+  }
+}
+
+.post__date {
+  color: #727272;
+  font-size: 11px;
+
+  @media screen and (min-width: 768px) {
+    font-size: 16px;
+  }
+}
+
+.post__description {
+  color: #484848;
+}
+
+.post__frame {
+  border-radius: 10px;
+  display: inline-block;
+  height: 38vh;
+  overflow: hidden;
+  width: 100%;
+
+  @media screen and (min-width: 768px) {
+    height:18vh;
+    width: 28%;
+  }
+
+  @media screen and (min-width: 1024px) {
+    display: inline-block;
+  }
+}
+
+.post__image {
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
+
+  @media screen and (min-width: 768px) {
+    height: 100%;
+  }
+}
+
+.post__link {
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.post__main__date {
+  margin: 15px 0 ;
+}
+
+.post__main__description {
+  font-size: 14px;
+  margin-top: 10px;
+
+  @media screen and (min-width: 768px) {
+    font-size: 18px;
+  }
+}
+
+.post__main__image {
+  margin-bottom: 15px ;
+}
+
+.post__main__title {
+  border-bottom: 1px solid #D4D4D4;
+  color: black;
+  font-size: 16px;
+
+  @media screen and (min-width: 768px) {
+    font-size: 25px;
+    margin: 50px 0 18px;
+  }
+}
+
+.post__preview {
+  color:#484848;
+  font-size: 14px;
+  margin-top: 5px;
+
+  @media screen and (min-width: 768px) {
+    margin-top: 10px;
+  }
+  @media screen and (min-width: 1024px) {
+    font-size: 18px;
+  }
+}
+
+.post__title {
+  color: black;
+  font-size: 16px;
+  font-weight: bold;
+  width: 100%;
+
+  @media screen and (min-width: 768px) {
+    font-size: 25px;
+    margin-bottom: 10px;
+  }
+  
+}
+
+.post__wrapper {
+  border-bottom: 1px solid #D4D4D4;
+  padding-bottom: 13px;
 }
