@@ -1,16 +1,17 @@
 ---
-sectionTitle: ¿Cómo trabajamos?...
+sectionTitle: ¿Cómo trabajamos?
 firstFeature:
   firstFeatureDescription: >-
     De manera ágil revisamos sus comunicaciones para la prensa y recomendamos
-    mejoras previo al envío...
-  firstFeatureTitle: Creación y corrección de estilos...
+    mejoras previo al envío.
+  firstFeatureTitle: Creación y corrección de estilos.
 secondFeature:
   secondFeatureDescription: >-
     Enviamos a medios de comunicación, periodistas, influenciadores, líderes de
-    opinión de acuerdo a intereses segmentados....
-  secondFeatureTitle: Distribución automatizada...
+    opinión de acuerdo a intereses segmentados.
+  secondFeatureTitle: Distribución automatizada.
 thirdFeature:
-  thirdFeatureDescription: Hacemos un reporte de análisis de desempeño del comunicado enviado.....
-  thirdFeatureTitle: Seguimiento.....
+  thirdFeatureDescription: Hacemos un reporte de análisis de desempeño del comunicado enviado.
+  thirdFeatureTitle: Seguimiento.
 ---
+
