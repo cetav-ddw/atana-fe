@@ -1,0 +1,42 @@
+.register {
+  background-image: url('../../static/slim-top-screen.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  padding: 50px;
+  position: relative;
+
+  @media screen and (min-width: 700px){
+    background-image: none;
+  }
+}
+
+.register::before {
+  content: "";
+
+  @media screen and (min-width: 700px) {
+    background-image: url('../../static/slim-left-corner.svg');
+    background-repeat: no-repeat;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: -1;
+  }
+}
+
+.register::after {
+  content: "";
+
+  @media screen and (min-width: 700px) {
+    background-image: url('../../static/slim-right-corner.svg');
+    background-position: right;
+    background-repeat: no-repeat;
+    height: 100%;
+    right: 0;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    z-index: -1;
+  }
+}
