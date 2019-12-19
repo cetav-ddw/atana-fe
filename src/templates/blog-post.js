@@ -3,6 +3,7 @@ import { graphql } from 'gatsby';
 import SEO from '../components/seo';
 import Menu from '../components/sections/nav-menu';
 import FooterContact from '../components/sections/footer-contact';
+
 import '../styles/blog.scss';
 
 class BlogPostTemplate extends React.Component {
@@ -18,22 +19,24 @@ class BlogPostTemplate extends React.Component {
           <Menu />
         </div>
         <div className="section__wrapper">
-          <h1 className="post__main__title">{post.frontmatter.title}</h1>
-          <p className="post__description post__main__description">{post.frontmatter.description}</p>
-          <p className="post__date post__main__date">{post.frontmatter.date}</p>
+          <h1 className="post__main-title">{post.frontmatter.title}</h1>
+          <p className="post__description post__main-description">{post.frontmatter.description}</p>
+          <p className="post__date post__main-date">{post.frontmatter.date}</p>
           {post.frontmatter.postImage !== '' && (
             <img
               src={post.frontmatter.postImage}
-              className="post__image post__main__image"
+              className="post__image post__main-mage"
               alt=""
             />
           )}
-          <div dangerouslySetInnerHTML={{ __html: post.html }} className="post__main__content" />
-          {post.frontmatter.postVideo !== '' && (
-            <iframe
-            title="video"
-            src={post.frontmatter.postVideo}
-          ></iframe>
+          <div dangerouslySetInnerHTML={{ __html: post.html }} className="post__main-content" />
+          {post.frontmatter.postVideo && (
+            <div className="post__video-wrap">
+              <iframe
+              title="video"
+              src={post.frontmatter.postVideo}
+            ></iframe>
+            </div>
           )}
           
         </div>
