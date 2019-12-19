@@ -30,7 +30,7 @@ const Package = ({ data }) => {
         className={`package__body ${toggleState ? 'package__body--open' : ''}`}
       >
         {bundleFeatures(data.features)}
-        <Link to="" className="btn btn--secondary package__btn">
+        <Link to="/registro" className="btn btn--secondary package__btn">
           Obtener {data.title}
         </Link>
       </div>

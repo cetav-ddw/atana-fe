@@ -10,10 +10,13 @@ const Menu = () => (
         <img src="../atana-logo.svg" alt="átana" className="header__logo" />
       </Link>
       <div>
-        <Link to="" className="nav__link">
-          iniciar sesión
+        <Link to="/blog" className="nav__link">
+          Blog
         </Link>
-        <Link to="" className="nav__btn btn btn--primary">
+        <Link to="" className="nav__link">
+          Iniciar sesión
+        </Link>
+        <Link to="/registro" className="nav__btn btn btn--primary">
           Suscribirse
         </Link>
       </div>
