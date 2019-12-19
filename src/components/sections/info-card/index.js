@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'gatsby';
 
 import './info-card.scss';
 
@@ -17,9 +18,9 @@ const InfoCard = ({
       <div className="container__info">
         <h3 className="info__tile">{title}</h3>
         <p className="info__paragraph">{paragraph}</p>
-        <a className="info__link" href={href}>
+        <Link className="info__link" to="/registro">
           {link}
-        </a>
+        </Link>
       </div>
 
       <div className="container__animation" id={id}>
@@ -29,7 +30,7 @@ const InfoCard = ({
           <img
             className={id}
             src={src}
-            alt="Átana cuenta con grandes beneficios."
+            alt=""
           />
         )}
       </div>
