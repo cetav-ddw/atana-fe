@@ -32,8 +32,6 @@ const FooterContact = () => {
           '0'
         ].node.childMarkdownRemark;
 
-        console.log(frontmatter);
-
         return (
           <div className="footer__gradient">
             <div className="contact__social">
