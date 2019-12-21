@@ -17,7 +17,6 @@ Este repositorio contiene el código y la documentación de Átana.
 
 "cd atana-fe"
 
-
 2. Instalar las dependencias que están dentro del proyecto, usar comando:
 
 "npm install"

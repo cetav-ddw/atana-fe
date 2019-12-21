@@ -32,6 +32,8 @@ const FooterContact = () => {
           '0'
         ].node.childMarkdownRemark;
 
+        console.log(frontmatter);
+
         return (
           <div className="footer__gradient">
             <div className="contact__social">
@@ -44,19 +46,19 @@ const FooterContact = () => {
               </Link>
               <div className="social__container">
                 <p>Síguenos en nuestras redes sociales:</p>
-                {frontmatter.socialFacebook !== null && (
+                {frontmatter.socialFacebook !== '-' && (
                   <Link
                     to={frontmatter.socialFacebook}
                     className="social social--facebook"
                   />
                 )}
-                {frontmatter.socialInstagram !== null && (
+                {frontmatter.socialInstagram !== '-' && (
                   <Link
                     to={frontmatter.socialInstagram}
                     className="social social--instagram"
                   />
                 )}
-                {frontmatter.socialWhatsapp !== null && (
+                {frontmatter.socialWhatsapp !== '-' && (
                   <Link
                     to={frontmatter.socialWhatsapp}
                     className="social social--whatsapp"

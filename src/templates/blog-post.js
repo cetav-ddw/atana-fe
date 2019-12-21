@@ -19,7 +19,9 @@ class BlogPostTemplate extends React.Component {
         </div>
         <div className="section__wrapper">
           <h1 className="post__main-title">{post.frontmatter.title}</h1>
-          <p className="post__description post__main-description">{post.frontmatter.description}</p>
+          <p className="post__description post__main-description">
+            {post.frontmatter.description}
+          </p>
           <p className="post__date post__main-date">{post.frontmatter.date}</p>
           {post.frontmatter.postImage !== null && (
             <img
@@ -28,7 +30,10 @@ class BlogPostTemplate extends React.Component {
               alt=""
             />
           )}
-          <div dangerouslySetInnerHTML={{ __html: post.html }} className="post__main-content" />
+          <div
+            dangerouslySetInnerHTML={{ __html: post.html }}
+            className="post__main-content"
+          />
           {post.frontmatter.postVideo !== null && (
             <div className="post__video-wrap">
               <iframe

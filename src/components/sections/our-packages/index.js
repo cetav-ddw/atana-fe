@@ -87,9 +87,12 @@ export default () => {
         }
       `}
       render={packageData => {
-        const firstPackage = packageData.first.edges['0'].node.childMarkdownRemark.frontmatter;
-        const secondPackage = packageData.second.edges['0'].node.childMarkdownRemark.frontmatter;
-        const thirdPackage = packageData.third.edges['0'].node.childMarkdownRemark.frontmatter;
+        const firstPackage =
+          packageData.first.edges['0'].node.childMarkdownRemark.frontmatter;
+        const secondPackage =
+          packageData.second.edges['0'].node.childMarkdownRemark.frontmatter;
+        const thirdPackage =
+          packageData.third.edges['0'].node.childMarkdownRemark.frontmatter;
         const bundlerPackage = [firstPackage, secondPackage, thirdPackage];
         const bundle = bundlerPackage.map((bundle, id) => {
           return <Package data={bundle} key={`bundle-${id}`} />;
