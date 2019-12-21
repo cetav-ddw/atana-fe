@@ -17,7 +17,7 @@ const Package = ({ data }) => {
     for (let key in processFeature) {
       if (processFeature.hasOwnProperty(key)) {
         {
-          processFeature[key] !== '-' &&
+          processFeature[key] !== null &&
             featuresArray.push(
               <li key={`${key}:${processFeature}`}>{processFeature[key]}</li>
             );

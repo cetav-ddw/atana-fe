@@ -44,19 +44,19 @@ const FooterContact = () => {
               </Link>
               <div className="social__container">
                 <p>Síguenos en nuestras redes sociales:</p>
-                {frontmatter.socialFacebook !== '-' && (
+                {frontmatter.socialFacebook !== null && (
                   <Link
                     to={frontmatter.socialFacebook}
                     className="social social--facebook"
                   />
                 )}
-                {frontmatter.socialInstagram !== '-' && (
+                {frontmatter.socialInstagram !== null && (
                   <Link
                     to={frontmatter.socialInstagram}
                     className="social social--instagram"
                   />
                 )}
-                {frontmatter.socialWhatsapp !== '-' && (
+                {frontmatter.socialWhatsapp !== null && (
                   <Link
                     to={frontmatter.socialWhatsapp}
                     className="social social--whatsapp"

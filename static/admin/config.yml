@@ -28,7 +28,7 @@ collections:
       media_library:
         config:
           multiple: false
-    - { label: "Video del post", name: "postVideo", widget: "string", required: false }
+    - { label: "Agregar el Id del video, soporta Youtube", name: "postVideo", widget: "string", required: false }
     - { label: "Contenido del post", name: "body", widget: "markdown" }
     - { label: "Autor del post", name: "author", widget: "string" }
   - label: "Landing Contenido"
@@ -131,16 +131,16 @@ collections:
       - { label: "Título del paquete", name: "packageTitle", widget: "string"}
       - { label: "Precio del paquete", name: "packagePrice", widget: "string"}
       - {
-        label: "Beneficios del paquete, todos los espacios son requeridos. En caso de no necesitar un beneficio, ingresar el signo '-' guion. De esta forma el sistema ignora el contenido del espacio.",
+        label: "Beneficios del paquete",
         name: "packageBenefits",
         widget: "object",
         fields:
           [
           { label: "Primer beneficio", name: "firstBenefit", required: true, widget: "string"},
-          { label: "Segundo beneficio", name: "secondBenefit", required: true, widget: "string"},
-          { label: "Tercer beneficio", name: "thirdBenefit", required: true, widget: "string"},
-          { label: "Cuarto beneficio", name: "fourthBenefit", required: true, widget: "string"},
-          { label: "Quinto beneficio", name: "fifthBenefit", required: true, widget: "string"}
+          { label: "Segundo beneficio", name: "secondBenefit", required: false, widget: "string"},
+          { label: "Tercer beneficio", name: "thirdBenefit", required: false, widget: "string"},
+          { label: "Cuarto beneficio", name: "fourthBenefit", required: false, widget: "string"},
+          { label: "Quinto beneficio", name: "fifthBenefit", required: false, widget: "string"}
           ]
         }
       - { label: "Color del paquete", name: "packageStyle", widget: "select", options: ["basic", "standard", "premium"], default: ["basic"], multiple: false}
@@ -152,16 +152,16 @@ collections:
       - { label: "Título del paquete", name: "packageTitle", widget: "string"}
       - { label: "Precio del paquete", name: "packagePrice", widget: "string"}
       - {
-        label: "Beneficios del paquete, todos los espacios son requeridos. En caso de no necesitar un beneficio, ingresar el signo '-' guion. De esta forma el sistema ignora el contenido del espacio.",
+        label: "Beneficios del paquete",
         name: "packageBenefits",
         widget: "object",
         fields:
           [
           { label: "Primer beneficio", name: "firstBenefit", required: true, widget: "string"},
-          { label: "Segundo beneficio", name: "secondBenefit", required: true, widget: "string"},
-          { label: "Tercer beneficio", name: "thirdBenefit", required: true, widget: "string"},
-          { label: "Cuarto beneficio", name: "fourthBenefit", required: true, widget: "string"},
-          { label: "Quinto beneficio", name: "fifthBenefit", required: true, widget: "string"}
+          { label: "Segundo beneficio", name: "secondBenefit", required: false, widget: "string"},
+          { label: "Tercer beneficio", name: "thirdBenefit", required: false, widget: "string"},
+          { label: "Cuarto beneficio", name: "fourthBenefit", required: false, widget: "string"},
+          { label: "Quinto beneficio", name: "fifthBenefit", required: false, widget: "string"}
           ]
         }
       - { label: "Color del paquete", name: "packageStyle", widget: "select", options: ["basic", "standard", "premium"], default: ["standard"], multiple: false}
@@ -173,16 +173,16 @@ collections:
       - { label: "Título del paquete", name: "packageTitle", widget: "string"}
       - { label: "Precio del paquete", name: "packagePrice", widget: "string"}
       - {
-        label: "Beneficios del paquete, todos los espacios son requeridos. En caso de no necesitar un beneficio, ingresar el signo '-' guion. De esta forma el sistema ignora el contenido del espacio.",
+        label: "Beneficios del paquete",
         name: "packageBenefits",
         widget: "object",
         fields:
           [
           { label: "Primer beneficio", name: "firstBenefit", required: true, widget: "string"},
-          { label: "Segundo beneficio", name: "secondBenefit", required: true, widget: "string"},
-          { label: "Tercer beneficio", name: "thirdBenefit", required: true, widget: "string"},
-          { label: "Cuarto beneficio", name: "fourthBenefit", required: true, widget: "string"},
-          { label: "Quinto beneficio", name: "fifthBenefit", required: true, widget: "string"}
+          { label: "Segundo beneficio", name: "secondBenefit", required: false, widget: "string"},
+          { label: "Tercer beneficio", name: "thirdBenefit", required: false, widget: "string"},
+          { label: "Cuarto beneficio", name: "fourthBenefit", required: false, widget: "string"},
+          { label: "Quinto beneficio", name: "fifthBenefit", required: false, widget: "string"}
           ]
         }
       - { label: "Color del paquete", name: "packageStyle", widget: "select", options: ["basic", "standard", "premium"], default: ["premium"], multiple: false}

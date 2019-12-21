@@ -9,7 +9,6 @@ import '../styles/blog.scss';
 class BlogPostTemplate extends React.Component {
   render() {
     const post = this.props.data.markdownRemark;
-    console.log(this.props.data)
     const siteTitle = this.props.data.site.siteMetadata.title;
     const { previous, next } = this.props.pageContext;
     return (
@@ -22,7 +21,7 @@ class BlogPostTemplate extends React.Component {
           <h1 className="post__main-title">{post.frontmatter.title}</h1>
           <p className="post__description post__main-description">{post.frontmatter.description}</p>
           <p className="post__date post__main-date">{post.frontmatter.date}</p>
-          {post.frontmatter.postImage !== '' && (
+          {post.frontmatter.postImage !== null && (
             <img
               src={post.frontmatter.postImage}
               className="post__image post__main-mage"
@@ -30,15 +29,14 @@ class BlogPostTemplate extends React.Component {
             />
           )}
           <div dangerouslySetInnerHTML={{ __html: post.html }} className="post__main-content" />
-          {post.frontmatter.postVideo && (
+          {post.frontmatter.postVideo !== null && (
             <div className="post__video-wrap">
               <iframe
-              title="video"
-              src={post.frontmatter.postVideo}
-            ></iframe>
+                title="video"
+                src={`https://www.youtube.com/embed/${post.frontmatter.postVideo}`}
+              ></iframe>
             </div>
           )}
-          
         </div>
         <FooterContact />
       </React.Fragment>
