@@ -75,7 +75,9 @@ const OurMission = () => {
               <div className="cta">
                 <div className="our-mission__svg cta__paper-plane--dark" />
                 <div className="our-mission__svg cta__paper-plane" />
-                <Link className="cta__btn" to="/registro">Crea tu comunicado</Link>
+                <Link className="cta__btn" to="/registro">
+                  Crea tu comunicado
+                </Link>
               </div>
             </div>
           </section>

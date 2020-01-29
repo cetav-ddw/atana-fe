@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'gatsby';
 import Button from '../button';
-import PropTypes from 'prop-types';
 
 import './package.scss';
 import '../button/button.scss';
@@ -14,24 +13,32 @@ const Package = ({ data }) => {
   };
 
   const bundleFeatures = processFeature => {
-    const featureItem = processFeature.map((feature, id) => {
-      return <li key={`${data.bundle}-${id}`}>{feature}</li>;
-    });
-    return <ul className="package__features">{featureItem}</ul>;
+    const featuresArray = [];
+    for (let key in processFeature) {
+      if (processFeature.hasOwnProperty(key)) {
+        {
+          processFeature[key] !== '-' &&
+            featuresArray.push(
+              <li key={`${key}:${processFeature}`}>{processFeature[key]}</li>
+            );
+        }
+      }
+    }
+    return <ul className="package__features">{featuresArray}</ul>;
   };
 
   return (
-    <div className={`package package--${data.bundle}`}>
+    <div className={`package package--${data.packageStyle}`}>
       <div className="package__head">
-        <p className="package__type">{data.title}</p>
+        <p className="package__type">{data.packageTitle}</p>
       </div>
-      <p className="package__price">{data.price}</p>
+      <p className="package__price">{data.packagePrice}</p>
       <div
         className={`package__body ${toggleState ? 'package__body--open' : ''}`}
       >
-        {bundleFeatures(data.features)}
-        <Link to="/registro" className="btn btn--secondary package__btn">
-          Obtener {data.title}
+        {bundleFeatures(data.packageBenefits)}
+        <Link to="" className="btn btn--secondary package__btn">
+          Obtener {data.packageTitle}
         </Link>
       </div>
       <Button
@@ -42,16 +49,6 @@ const Package = ({ data }) => {
       </Button>
     </div>
   );
-};
-
-Package.defaultProps = {
-  data: [],
-  bundle: 'basic',
-};
-
-Package.propTypes = {
-  data: PropTypes.object,
-  bundle: PropTypes.string,
 };
 
 export default Package;
