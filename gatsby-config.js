@@ -11,8 +11,8 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `posts`,
-        path: `${__dirname}/content/posts`,
+        name: `images`,
+        path: `${__dirname}/src/images`,
       },
     },
     {
@@ -25,8 +25,15 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `images`,
-        path: `${__dirname}/src/images`,
+        name: `packages`,
+        path: `${__dirname}/content/packages`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `posts`,
+        path: `${__dirname}/content/posts`,
       },
     },
     `gatsby-transformer-sharp`,
@@ -42,12 +49,6 @@ module.exports = {
         theme_color: `#444444`,
         display: `minimal-ui`,
         icon: `src/images/atana-logo.png`,
-      },
-    },
-    {
-      resolve: `gatsby-plugin-mailchimp`,
-      options: {
-        endpoint: `https://gmail.us5.list-manage.com/subscribe/post?u=996097153c728f6ca69f50a35&amp;id=f0595f2d40`,
       },
     },
     `gatsby-plugin-netlify-cms`,
